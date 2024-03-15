@@ -10,6 +10,7 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration - This app uses Figaro to handle env variables. You will find an example application.test.yml file in the config folder. Copy the contents and create a new application.yml file. Paste in the contents and change the username and password. Ensure the postgresql user has auth to create database.
+[Learn more](https://rubyhero.dev/environment-variables#heading-figaro)
 
 * Database creation
 
