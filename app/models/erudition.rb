@@ -1,0 +1,2 @@
+class Erudition < ApplicationRecord
+end

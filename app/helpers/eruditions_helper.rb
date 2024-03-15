@@ -1,0 +1,2 @@
+module EruditionsHelper
+end
