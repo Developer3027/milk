@@ -10,6 +10,9 @@
 # Ignore vendor bundle folder
 /vendor/bundle/*
 
+# Ignore the env variables file
+/config/application.yml
+
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb

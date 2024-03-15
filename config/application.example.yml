@@ -1,0 +1,4 @@
+# This app uses the figaro gem to handle env variables. Similar to Dotenv but uses yaml files and in terms of accessing values, provides a more Ruby way of doing it.
+
+# DATABASE_USERNAME: Jack
+# DATABASE_PASSWORD: Sparrow
