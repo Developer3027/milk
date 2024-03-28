@@ -11,30 +11,83 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="">
-
-      <nav class="flex justify-between items-center p-4 h-20 sticky top-0 bg-terminal-window-100">
-        <div class="text-terminal-green-100">logo</div>
-        <div class="flex space-x-2">
-          <div class="text-terminal-green-100">email</div>
-          <div class="text-terminal-green-100 md:hidden">dropdown</div>
+  <body class="bg-terminal-window-100">
+      <!-- //? Sticky Top Navbar -->
+      <nav class="flex justify-between items-center p-4 h-20 sticky top-0">
+        <!-- //? Left section links home -->
+        <%= link_to root_path, class: "flex space-x-2" do %>
+          <div class="text-terminal-green-100">Mason Roberts</div>
+          <%= image_tag('MILK-icon.svg', size: '28x28', class: 'mx-auto') %>
+          <div class="text-terminal-green-100">Developer3027 | DevTech group v0.30</div>
+        <% end %>
+        <!-- //? Right section Page Links -->
+        <div class="text-terminal-green-100">
+          <ul class="flex space-x-2">
+            <li>blog</li>
+            <li><%= link_to "erudition", eruditions_url %></li>
+            <li>hermit+</li>
+            <li>tunez</li>
+            <li>car-wash</li>
+            <li>salt&oak</li>
+            <li class="md:hidden">dropdown</li>
+          </ul>
         </div>
       </nav>
 
       <div class="flex">
 
-        <main class="w-5/6 p-4 flex-grow">
-          <% (1..100).each do |i| %>
-            <p><%= i %></p>
-          <%end%>
-          <%= yield %>
-        </main>
-        <nav class="hidden md:flex flex-col justify-between w-1/6 p-4 text-center bg-terminal-window-100 sticky top-20 h-[calc(100vh-80px)]">
-          <div class="text-terminal-green-100">
-            sidebar top
+        <main class="flex flex-grow w-4/6">
+          <!-- //? Hide 1st col on small screens -->
+          <div class="hidden md:flex flex-col justify-between w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)]">
+            <!-- //? Col one -->
+            <div class="flex flex-col justify-between border-l-2 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
+              <div class="flex space-x-2 justify-between px-2">
+                <p class="text-terminal-green-100 text-sm"><span class="font-bold">linux: </span>- ubuntu-22.04</p>
+                <p class="text-terminal-green-100 text-sm"><span class="font-bold">Device: </span>- MILK</p>
+              </div>
+              <div class="flex space-x-2 justify-between px-2">
+                <p class="text-terminal-green-100 text-xs"><span class="font-bold text-sm">definition: </span>- Mason's Informational Little Kist</p>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <%= image_tag('MILK.svg', size: '178x233', class: 'mx-auto') %>
+            </div>
+            <div class="flex flex-col justify-between border-l-2 border-b-2 border-r-2 rounded-sm border-terminal-green-100">
+              <div class="flex space-x-2 justify-between px-2">
+                <!-- //? Give git info to page --> 
+                <code class="text-terminal-green-100 text-sm">
+                  commit: - <%= %x{ git log --pretty=format:"%h - %an, %ar : %s" -1 } %>
+                </code>
+              </div>
+            </div>
           </div>
-          <div class="text-terminal-green-100">
-            sidebar bottom
+          <!-- //? Center col -->
+          <div class=" flex flex-grow w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)] overflow-auto scroll-mx-1">
+            <%= yield %>
+          </div>
+        </main>
+        <!-- //? Third col - Sidebar -->
+        <nav class="hidden md:flex flex-col w-2/6 p-4 text-center sticky top-20 h-[calc(100vh-80px)]">
+          <div class="flex justify-evenly">
+            <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
+              <p class="text-terminal-green-100 text-sm"><span class="font-bold">lang: </span>- Rails 7</p>
+              <p class="text-terminal-green-100 text-sm"><span class="font-bold">DB: </span>- PG</p>
+            </div>
+            <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
+              <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive C: </span>- 31%</p>
+              <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive D: </span>- 62%</p>
+            </div>
+          </div>
+          <div class="text-start py-2 text-terminal-green-100">
+            <h4 class="font-bold py-2">Projects:</h4>
+            <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
+            <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
+            <p class="text-sm py-1"><span class="font-bold">Hermit+</span> - Do you know the hermits of minecraft? I have gathered them together to better enjoy.</p>
+            <p class="text-sm py-1"><span class="font-bold">Tunez</span> - collection of the music I like. Little bit of spotify, little bit of soundcloud.</p>
+            <p class="text-sm py-1"><span class="font-bold">Car Wash</span> - work I did as a developer for AutoBell. Created node scripts and a book keeping concept.</p>
+            <p class="text-sm py-1"><span class="font-bold">Salt&Oak</span> - I am a Navy vet and love sailing. I miss the sea and salt. Here I collect these providers with functionality they should have.</p>
+            <h4 class="font-bold py-2">Volunteer:</h4>
+            <p class="text-sm py-1"><span class="font-bold">Pet Rescue</span> - open source project that I have been assisting with. Rebuilding the style of site.</p>
           </div>
         </nav>
 
