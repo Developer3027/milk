@@ -11,10 +11,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-slate-300">
-    <main class="container mx-auto flex flex-col">
-      <%= render "partials/navbar" %>
-      <%= yield %>
-    </main>
+  <body class="bg-terminal-window-100">
+      <%= render partial: "partials/navbar" %>
+      <div class="flex">
+        <%= yield %>
+      </div>
+      
   </body>
 </html>
