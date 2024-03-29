@@ -1,103 +1,103 @@
 <main class="flex flex-grow w-4/6">
-          <!-- //? Hide 1st col on small screens -->
-          <div class="hidden lg:flex flex-col justify-between w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)]">
-            <!-- //? Col one -->
-            <div class="flex flex-col justify-between border-l-2 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
-              <div class="flex space-x-2 justify-between px-2">
-                <p class="text-terminal-green-100 text-sm"><span class="font-bold">linux: </span>- ubuntu-22.04</p>
-                <p class="text-terminal-green-100 text-sm"><span class="font-bold">Device: </span>- MILK</p>
-              </div>
-              <div class="flex space-x-2 justify-between px-2">
-                <p class="text-terminal-green-100 text-xs"><span class="font-bold text-sm">definition: </span>- Mason's Informational Little Kist</p>
-              </div>
-            </div>
-            <div class="flex justify-center">
-              <%= image_tag('MILK.svg', size: '178x233', class: 'mx-auto') %>
-            </div>
-            <div class="flex flex-col justify-between border-l-2 border-b-2 border-r-2 rounded-sm border-terminal-green-100">
-              <div class="flex space-x-2 justify-between px-2">
-                <!-- //? Give git info to page --> 
-                <code class="text-terminal-green-100 text-sm">
-                  commit: - <%= %x{ git log --pretty=format:"%h - %an, %ar : %s" -1 } %>
-                </code>
-              </div>
-            </div>
-          </div>
-          <!-- //? Center col -->
-          <div class=" flex flex-col flex-grow w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)] overflow-auto scroll-mx-1">
-            <!-- //! here -->
-            <div class="">
-  <div class="font-mPlusCode fw-bold text-terminal-green-100">
-    <h4>Welcome to MILK,</h4>
-    <p class="text-sm">
-      My name is Mason Roberts, Developer3027. This is my little corner of the internet. I am an automotive technician living in the Carolina’s, US. I have been studying development and software engineering for the past several years.
-    </p>
-    <p class="text-sm">
-      This project aims to gather all my favorite projects together in one box, one container, one kist, that I can work on and enjoy.
-    </p>
-    <p class="text-sm">
-      Built in Rails, I hope you enjoy what I am building here. This is a collection of what I have learned, learning, and enjoy. I encourage you to check out the various content providers I have collected here. They are talented people working hard to teach and entertain. I need them organized a little differently. I helps me learn, helps me grow.
-    </p>
-    <p class="text-sm">
-      If you find you like what I am doing and if it helps you, consider supporting. This project is open source and all providers collected here are transparent for you. The only thing I claim as my own is the thought put into this concept. As one may gather music to enjoy later, I have collected these bright points found on the web, so I may enjoy them later.
-    </p>
-    <p class="text-sm py-2">
-      Thank you and please enjoy.
-    </p>
+  <!-- //? Hide 1st col on small screens -->
+  <div class="hidden lg:flex flex-col justify-between w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)]">
+    <!-- //? Col one -->
+    <div class="flex flex-col justify-between border-l-2 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
+      <div class="flex space-x-2 justify-between px-2">
+        <p class="text-terminal-green-100 text-sm"><span class="font-bold">linux: </span>- ubuntu-22.04</p>
+        <p class="text-terminal-green-100 text-sm"><span class="font-bold">Device: </span>- MILK</p>
+      </div>
+      <div class="flex space-x-2 justify-between px-2">
+        <p class="text-terminal-green-100 text-xs"><span class="font-bold text-sm">definition: </span>- Mason's Informational Little Kist</p>
+      </div>
+    </div>
+    <div class="flex justify-center">
+      <%= image_tag('MILK.svg', size: '178x233', class: 'mx-auto') %>
+    </div>
+    <div class="flex flex-col justify-between border-l-2 border-b-2 border-r-2 rounded-sm border-terminal-green-100">
+      <div class="flex space-x-2 justify-between px-2">
+        <!-- //? Give git info to page --> 
+        <code class="text-terminal-green-100 text-sm">
+          commit: - <%= %x{ git log --pretty=format:"%h - %an, %ar : %s" -1 } %>
+        </code>
+      </div>
+    </div>
   </div>
-</div>
-            <!-- //? Mobile - Button group -->
-            <div class="md:hidden flex justify-evenly flex-wrap text-terminal-green-100 mt-1">
-              <%= link_to "Support", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-              <%= link_to "Providers", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-              <%= link_to "Qualifications", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-              <%= link_to "Hire", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-            </div>
-            <!-- //? Mobile - Project Links -->
-            <div class="md:hidden text-start py-2 text-terminal-green-100">
-              <h4 class="font-bold py-2">Projects:</h4>
-              <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
-              <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
-              <p class="text-sm py-1"><span class="font-bold">Hermit+</span> - Do you know the hermits of minecraft? I have gathered them together to better enjoy.</p>
-              <p class="text-sm py-1"><span class="font-bold">Tunez</span> - collection of the music I like. Little bit of spotify, little bit of soundcloud.</p>
-              <p class="text-sm py-1"><span class="font-bold">Car Wash</span> - work I did as a developer for AutoBell. Created node scripts and a book keeping concept.</p>
-              <p class="text-sm py-1"><span class="font-bold">Salt&Oak</span> - I am a Navy vet and love sailing. I miss the sea and salt. Here I collect these providers with functionality they should have.</p>
-              <h4 class="font-bold py-2">Volunteer:</h4>
-              <p class="text-sm py-1"><span class="font-bold">Pet Rescue</span> - open source project that I have been assisting with. Rebuilding the style of site.</p>
-            </div>
-          </div>
-        </main>
-        <!-- //? Third col - Sidebar -->
-        <nav class="hidden md:flex flex-col w-2/6 p-4 text-center sticky top-20 h-[calc(100vh-80px)]">
-          <!-- //? Top design section -->
-          <div class="flex justify-evenly">
-            <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
-              <p class="text-terminal-green-100 text-sm"><span class="font-bold">lang: </span>- Rails 7</p>
-              <p class="text-terminal-green-100 text-sm"><span class="font-bold">DB: </span>- PG</p>
-            </div>
-            <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
-              <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive C: </span>- 31%</p>
-              <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive D: </span>- 62%</p>
-            </div>
-          </div>
-          <!-- //? Project Links -->
-          <div class="text-start py-2 text-terminal-green-100">
-            <h4 class="font-bold py-2">Projects:</h4>
-            <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
-            <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
-            <p class="text-sm py-1"><span class="font-bold">Hermit+</span> - Do you know the hermits of minecraft? I have gathered them together to better enjoy.</p>
-            <p class="text-sm py-1"><span class="font-bold">Tunez</span> - collection of the music I like. Little bit of spotify, little bit of soundcloud.</p>
-            <p class="text-sm py-1"><span class="font-bold">Car Wash</span> - work I did as a developer for AutoBell. Created node scripts and a book keeping concept.</p>
-            <p class="text-sm py-1"><span class="font-bold">Salt&Oak</span> - I am a Navy vet and love sailing. I miss the sea and salt. Here I collect these providers with functionality they should have.</p>
-            <h4 class="font-bold py-2">Volunteer:</h4>
-            <p class="text-sm py-1"><span class="font-bold">Pet Rescue</span> - open source project that I have been assisting with. Rebuilding the style of site.</p>
-          </div>
-          <!-- //? Button group -->
-          <div class="flex justify-evenly flex-wrap text-terminal-green-100 mt-1">
-            <%= link_to "Support", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-            <%= link_to "Providers", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-            <%= link_to "Qualifications", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-            <%= link_to "Hire", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
-          </div>
-        </nav>
+  <!-- //? Center col -->
+  <div class=" flex flex-col flex-grow w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)] overflow-auto scroll-mx-1">
+    <!-- //? page content -->
+    <div class="">
+      <div class="font-mPlusCode fw-bold text-terminal-green-100">
+        <h4>Welcome to MILK,</h4>
+        <p class="text-sm">
+          My name is Mason Roberts, Developer3027. This is my little corner of the internet. I am an automotive technician living in the Carolina’s, US. I have been studying development and software engineering for the past several years.
+        </p>
+        <p class="text-sm">
+          This project aims to gather all my favorite projects together in one box, one container, one kist, that I can work on and enjoy.
+        </p>
+        <p class="text-sm">
+          Built in Rails, I hope you enjoy what I am building here. This is a collection of what I have learned, learning, and enjoy. I encourage you to check out the various content providers I have collected here. They are talented people working hard to teach and entertain. I need them organized a little differently. I helps me learn, helps me grow.
+        </p>
+        <p class="text-sm">
+          If you find you like what I am doing and if it helps you, consider supporting. This project is open source and all providers collected here are transparent for you. The only thing I claim as my own is the thought put into this concept. As one may gather music to enjoy later, I have collected these bright points found on the web, so I may enjoy them later.
+        </p>
+        <p class="text-sm py-2">
+          Thank you and please enjoy.
+        </p>
+      </div>
+    </div>
+    <!-- //? Mobile - Button group -->
+    <div class="md:hidden flex justify-evenly flex-wrap text-terminal-green-100 mt-1">
+      <%= link_to "Support", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+      <%= link_to "Providers", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+      <%= link_to "Qualifications", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+      <%= link_to "Hire", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+    </div>
+    <!-- //? Mobile - Project Links -->
+    <div class="md:hidden text-start py-2 text-terminal-green-100">
+      <h4 class="font-bold py-2">Projects:</h4>
+      <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
+      <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
+      <p class="text-sm py-1"><span class="font-bold">Hermit+</span> - Do you know the hermits of minecraft? I have gathered them together to better enjoy.</p>
+      <p class="text-sm py-1"><span class="font-bold">Tunez</span> - collection of the music I like. Little bit of spotify, little bit of soundcloud.</p>
+      <p class="text-sm py-1"><span class="font-bold">Car Wash</span> - work I did as a developer for AutoBell. Created node scripts and a book keeping concept.</p>
+      <p class="text-sm py-1"><span class="font-bold">Salt&Oak</span> - I am a Navy vet and love sailing. I miss the sea and salt. Here I collect these providers with functionality they should have.</p>
+      <h4 class="font-bold py-2">Volunteer:</h4>
+      <p class="text-sm py-1"><span class="font-bold">Pet Rescue</span> - open source project that I have been assisting with. Rebuilding the style of site.</p>
+    </div>
+  </div>
+</main>
+<!-- //? Third col - Sidebar -->
+<nav class="hidden md:flex flex-col w-2/6 p-4 text-center sticky top-20 h-[calc(100vh-80px)]">
+  <!-- //? Top design section -->
+  <div class="flex justify-evenly">
+    <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
+      <p class="text-terminal-green-100 text-sm"><span class="font-bold">lang: </span>- Rails 7</p>
+      <p class="text-terminal-green-100 text-sm"><span class="font-bold">DB: </span>- PG</p>
+    </div>
+    <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
+      <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive C: </span>- 31%</p>
+      <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive D: </span>- 62%</p>
+    </div>
+  </div>
+  <!-- //? Project Links -->
+  <div class="text-start py-2 text-terminal-green-100">
+    <h4 class="font-bold py-2">Projects:</h4>
+    <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
+    <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
+    <p class="text-sm py-1"><span class="font-bold">Hermit+</span> - Do you know the hermits of minecraft? I have gathered them together to better enjoy.</p>
+    <p class="text-sm py-1"><span class="font-bold">Tunez</span> - collection of the music I like. Little bit of spotify, little bit of soundcloud.</p>
+    <p class="text-sm py-1"><span class="font-bold">Car Wash</span> - work I did as a developer for AutoBell. Created node scripts and a book keeping concept.</p>
+    <p class="text-sm py-1"><span class="font-bold">Salt&Oak</span> - I am a Navy vet and love sailing. I miss the sea and salt. Here I collect these providers with functionality they should have.</p>
+    <h4 class="font-bold py-2">Volunteer:</h4>
+    <p class="text-sm py-1"><span class="font-bold">Pet Rescue</span> - open source project that I have been assisting with. Rebuilding the style of site.</p>
+  </div>
+  <!-- //? Button group -->
+  <div class="flex justify-evenly flex-wrap text-terminal-green-100 mt-1">
+    <%= link_to "Support", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+    <%= link_to "Providers", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+    <%= link_to "Qualifications", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+    <%= link_to "Hire", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+  </div>
+</nav>
 
