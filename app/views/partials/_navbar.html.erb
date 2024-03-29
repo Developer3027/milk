@@ -1,11 +1,11 @@
 <!-- //? Sticky Top Navbar -->
-<div class="sticky top-0 z-10" data-controller="navbar" data-action="resize@window->navbar#closeOnLargerScreen keyup@window->navbar#closeWithEscape click@window->navbar#closeOnClickOutside">
+<div class="sticky top-0 z-10" data-controller="navbar" data-action="resize@window->navbar#closeOnLargerScreen keyup@window->navbar#closeWithEscape">
     <nav class="flex justify-between items-center p-4 h-20 bg-input-border-100 text-terminal-window-100">
     <!-- //? Left section links home -->
         <%= link_to root_path, class: "flex space-x-2" do %>
             <div class="mx-2 lg:mx-0">Mason Roberts</div>
             <%= image_tag('MILK-icon.svg', size: '28x28', class: 'mx-auto') %>
-            <div class="hidden lg:flex ">Developer3027 | DevTech group v0.30</div>
+            <div class="hidden lg:flex ">Developer3027 | DevTech group v0.3.0</div>
         <% end %>
         <!-- //? Right section Page Links -->
         <div class="flex flex-grow justify-end ">
@@ -16,15 +16,15 @@
                 <li class="hidden md:flex">tunez</li>
                 <li class="hidden md:flex">car-wash</li>
                 <li class="hidden md:flex">salt&oak</li>
-                <li class="md:hidden" role="button" data-action="click->navbar#toggle">&#9776</li>
             </ul>
+            <button class="md:hidden" role="button" aria-label="menu" data-action="click->navbar#toggle">&#9776</button>
         </div>
     </nav>
     <!-- //? Dropdown menu - mobile -->
     <nav class="hidden bg-input-border-100 absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
         <ul class="flex flex-col py-2 px-3">
                 <li class="flex border border-terminal-window-100 p-1 my-1 rounded-sm"><%= link_to "blog", "#" %></li>
-                <li class="flex border border-terminal-window-100 p-1 my-1 rounded-sm"><%= link_to "erudition", eruditions_url %></li>
+                <li class="flex border border-terminal-window-100 p-1 my-1 rounded-sm"><%= link_to "erudition", eruditions_url%></li>
                 <li class="flex border border-terminal-window-100 p-1 my-1 rounded-sm">hermit+</li>
                 <li class="flex border border-terminal-window-100 p-1 my-1 rounded-sm">tunez</li>
                 <li class="flex border border-terminal-window-100 p-1 my-1 rounded-sm">car-wash</li>

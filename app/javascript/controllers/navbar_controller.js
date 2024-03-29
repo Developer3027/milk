@@ -1,16 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
+import { useClickOutside } from "stimulus-use"
 
 // Connects to data-controller="navbar"
 export default class extends Controller {
   static targets = ["content"]
-  initialize() {
-    this.close();
-    this.closeOnClickOutside = this.closeOnClickOutside.bind(this);
-  }
 
   connect() {
-    this.close()
-    window.addEventListener("click", this.closeOnClickOutside);
+    useClickOutside(this)
   }
 
   toggle() {
@@ -25,14 +21,14 @@ export default class extends Controller {
     this.contentTarget.classList.remove("hidden")
     let main = document.querySelector("main")
     main.classList.add("blur")
-    document.body.classList.add("overflow-hidden")
+    document.body.classList.add('overflow-hidden')
   }
 
   close() {
     this.contentTarget.classList.add("hidden")
     let main = document.querySelector("main")
     main.classList.remove("blur")
-    document.body.classList.remove("overflow-hidden")
+    document.body.classList.remove('overflow-hidden')
   }
 
   closeOnLargerScreen(event) {
@@ -42,15 +38,14 @@ export default class extends Controller {
   }
 
   closeWithEscape(event) {
+    event.preventDefault()
     if (event.key === "Escape") {
       this.close()
     }
   }
 
-  closeOnClickOutside(event) {
-    if (event.element === event.target || this.element.contains(event.target))  {
-      return
-    }
+  clickOutside(event) {
+    event.preventDefault()
     this.close()
   }
 }
