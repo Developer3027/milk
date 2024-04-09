@@ -1,14 +1,14 @@
-<main class="flex flex-grow w-4/6">
+<main class="flex flex-grow w-4/6 text-terminal-green-100">
   <!-- //? Hide 1st col on small screens -->
   <div class="hidden lg:flex flex-col justify-between w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)]">
     <!-- //? Col one -->
     <div class="flex flex-col justify-between border-l-2 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
       <div class="flex space-x-2 justify-between px-2">
-        <p class="text-terminal-green-100 text-sm"><span class="font-bold">linux: </span>- ubuntu-22.04</p>
-        <p class="text-terminal-green-100 text-sm"><span class="font-bold">Device: </span>- MILK</p>
+        <p class="text-sm"><span class="font-bold">linux: </span>- ubuntu-22.04</p>
+        <p class="text-sm"><span class="font-bold">Device: </span>- MILK</p>
       </div>
       <div class="flex space-x-2 justify-between px-2">
-        <p class="text-terminal-green-100 text-xs"><span class="font-bold text-sm">definition: </span>- Mason's Informational Little Kist</p>
+        <p class=" text-xs"><span class="font-bold text-sm">definition: </span>- Mason's Informational Little Kist</p>
       </div>
     </div>
     <div class="flex justify-center">
@@ -17,7 +17,7 @@
     <div class="flex flex-col justify-between border-l-2 border-b-2 border-r-2 rounded-sm border-terminal-green-100">
       <div class="flex space-x-2 justify-between px-2">
         <!-- //? Give git info to page --> 
-        <code class="text-terminal-green-100 text-sm">
+        <code class=" text-sm">
           commit: - <%= %x{ git log --pretty=format:"%h - %an, %ar : %s" -1 } %>
         </code>
       </div>
@@ -27,7 +27,7 @@
   <div class=" flex flex-col flex-grow w-2/4 p-4 sticky top-20 h-[calc(100vh-80px)] overflow-auto scroll-mx-1">
     <!-- //? page content -->
     <div class="">
-      <div class="font-mPlusCode fw-bold text-terminal-green-100">
+      <div class="font-mPlusCode fw-bold ">
         <h4>Welcome to MILK,</h4>
         <p class="text-sm">
           My name is Mason Roberts, Developer3027. This is my little corner of the internet. I am an automotive technician living in the Carolina’s, US. I have been studying development and software engineering for the past several years.
@@ -44,17 +44,48 @@
         <p class="text-sm py-2">
           Thank you and please enjoy.
         </p>
+        <% if user_signed_in? %>
+          <p>Good to see you <%= current_user.email %></p>
+          <%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+        <% else %>
+          <h3>Already a member?</h3>
+
+          <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+            <div class="field flex justify-between my-2">
+              <%= f.label :email %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border rounded-sm border-input-border-100 bg-input-background-100 " %>
+            </div>
+
+            <div class="field flex justify-between my-2">
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "current-password", class: "border rounded-sm border-input-border-100 bg-input-background-100  " %>
+            </div>
+
+            <% if devise_mapping.rememberable? %>
+              <div class="field my-2">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+
+            <div class="actions flex justify-between my-2">
+              <%= f.submit "Log in", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+            </div>
+          <% end %>
+
+        <% end %>
       </div>
     </div>
     <!-- //? Mobile - Button group -->
-    <div class="md:hidden flex justify-evenly flex-wrap text-terminal-green-100 mt-1">
+    <div class="md:hidden flex justify-evenly flex-wrap  mt-1">
       <%= link_to "Support", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
       <%= link_to "Providers", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
       <%= link_to "Qualifications", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
       <%= link_to "Hire", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
     </div>
     <!-- //? Mobile - Project Links -->
-    <div class="md:hidden text-start py-2 text-terminal-green-100">
+    <div class="md:hidden text-start py-2 ">
       <h4 class="font-bold py-2">Projects:</h4>
       <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
       <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
@@ -68,20 +99,20 @@
   </div>
 </main>
 <!-- //? Third col - Sidebar -->
-<nav class="hidden md:flex flex-col w-2/6 p-4 text-center sticky top-20 h-[calc(100vh-80px)]">
+<nav class="hidden md:flex flex-col w-2/6 p-4 text-center sticky top-20 h-[calc(100vh-80px)] text-terminal-green-100">
   <!-- //? Top design section -->
   <div class="flex justify-evenly">
     <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
-      <p class="text-terminal-green-100 text-sm"><span class="font-bold">lang: </span>- Rails 7</p>
-      <p class="text-terminal-green-100 text-sm"><span class="font-bold">DB: </span>- PG</p>
+      <p class=" text-sm"><span class="font-bold">lang: </span>- Rails 7</p>
+      <p class=" text-sm"><span class="font-bold">DB: </span>- PG</p>
     </div>
     <div class="flex flex-col text-start py-1 pr-1 border-t-2 border-r-2 rounded-sm border-terminal-green-100">
-      <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive C: </span>- 31%</p>
-      <p class="text-terminal-green-100 text-sm"><span class="font-bold">drive D: </span>- 62%</p>
+      <p class=" text-sm"><span class="font-bold">drive C: </span>- 31%</p>
+      <p class=" text-sm"><span class="font-bold">drive D: </span>- 62%</p>
     </div>
   </div>
   <!-- //? Project Links -->
-  <div class="text-start py-2 text-terminal-green-100">
+  <div class="text-start py-2 ">
     <h4 class="font-bold py-2">Projects:</h4>
     <p class="text-sm py-1"><span class="font-bold">Blog</span> - everyone needs a blog. I write articles on code, mostly. Used as part of erudition.</p>
     <p class="text-sm py-1"><span class="font-bold">Erudition</span> - Learning platform to help me in learning, not only development, but more.</p>
@@ -93,7 +124,7 @@
     <p class="text-sm py-1"><span class="font-bold">Pet Rescue</span> - open source project that I have been assisting with. Rebuilding the style of site.</p>
   </div>
   <!-- //? Button group -->
-  <div class="flex justify-evenly flex-wrap text-terminal-green-100 mt-1">
+  <div class="flex justify-evenly flex-wrap  mt-1">
     <%= link_to "Support", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
     <%= link_to "Providers", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
     <%= link_to "Qualifications", "#", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
