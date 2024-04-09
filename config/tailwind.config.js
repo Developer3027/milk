@@ -1,5 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: [
     './public/*.html',
@@ -19,6 +21,8 @@ module.exports = {
       'terminal-window': { '100': '#141414' },
       'input-background': { '100': '#1E1E1E' },
       'input-border': { '100': '#BCA465' },
+      sky: colors.sky,
+      red: colors.red,
     },
   },
   plugins: [
