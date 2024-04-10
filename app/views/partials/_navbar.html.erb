@@ -16,10 +16,19 @@
                 <li class="hidden md:flex">tunez</li>
                 <li class="hidden md:flex">car-wash</li>
                 <li class="hidden md:flex">salt&oak</li>
-                <li><%= link_to user_session_path do %>
-                        <%= image_tag('Profile.svg', size: "24x24", class: "mx-4") %>
-                    <% end %>
-                </li>
+                <% if user_signed_in? %>
+                    <li>
+                        <%= link_to user_session_path do %>
+                            <%= image_tag('Profile-active.svg', size: "24x24", class: "mx-4") %>
+                        <% end %>
+                    </li>
+                <% else %>
+                    <li>
+                        <%= link_to user_session_path do %>
+                            <%= image_tag('Profile.svg', size: "24x24", class: "mx-4") %>
+                        <% end %>
+                    </li>
+                <% end %>
             </ul>
             <button class="md:hidden" role="button" aria-label="menu" data-action="click->navbar#toggle">&#9776</button>
         </div>
