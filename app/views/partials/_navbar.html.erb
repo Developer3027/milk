@@ -18,9 +18,9 @@
                 <li class="hidden md:flex">salt&oak</li>
                 <% if user_signed_in? %>
                     <li>
-                        <%= link_to user_session_path do %>
+                        <button role="button" aria-label="menu" data-action="click->navbar#profileToggle">
                             <%= image_tag('Profile-active.svg', size: "24x24", class: "mx-4") %>
-                        <% end %>
+                        </button>
                     </li>
                 <% else %>
                     <li>
@@ -32,6 +32,14 @@
             </ul>
             <button class="md:hidden" role="button" aria-label="menu" data-action="click->navbar#toggle">&#9776</button>
         </div>
+    </nav>
+    <!-- //? User menu -->
+    <nav class="hidden bg-input-border-100 absolute right-2 p-2" data-navbar-target="profile">
+        <ul>
+            <li class="my-2">Profile</li><!-- update user link -->
+            <li class="my-2">Support</li><!-- stripe donate -->
+            <%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border-100 bg-input-background-100 text-input-border-100 px-3 my-2" %>
+        </ul>
     </nav>
     <!-- //? Dropdown menu - mobile -->
     <nav class="hidden bg-input-border-100 absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
