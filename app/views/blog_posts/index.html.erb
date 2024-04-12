@@ -1,0 +1,13 @@
+<main class="w-full text-terminal-green-100 mt-2">
+    <div class="flex justify-center items-center">
+        <div class="flex flex-col items-start"">
+            <h1>Blogs</h1>
+            <% @blog_posts.each do |blog_post| %>
+                <div class="flex flex-col my-2 p-2 rounded-sm w-full bg-input-background-100">
+                    <h2><%= blog_post.title %></h2>
+                    <p><%= blog_post.body %></p>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</main>

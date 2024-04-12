@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations]
   devise_for :users
+
   resources :eruditions #//? Courses
   # get 'pages/home' #//! remove if not needed
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +16,9 @@ Rails.application.routes.draw do
 
   # get the admin root
   get "admin" => "admin#index"
+
+  # get the blog root
+  get "blog_posts" => "blog_posts#index"
 
   # Defines the root path route ("/")
   root "pages#home"
