@@ -1,11 +1,17 @@
 <main class="w-full text-terminal-green-100 mt-2">
     <div class="flex justify-center items-center">
-        <div class="flex flex-col items-start"">
+        <div class="flex flex-col items-start">
             <h1>Blogs</h1>
+            
             <% @blog_posts.each do |blog_post| %>
-                <div class="flex flex-col my-2 p-2 rounded-sm w-full bg-input-background-100">
-                    <h2><%= link_to blog_post.title, blog_post %></h2>
-                    <p><%= blog_post.body %></p>
+                <div class="flex flex-col my-2 p-2 rounded-sm w-96 bg-input-background-100">
+                    <h2 class="font-bold py-2"><%= link_to blog_post.title, blog_post %></h2>
+                    <p class="pb-3"><%= blog_post.content.to_plain_text.truncate_words(30) %></p>
+                    <% if blog_post.draft? %>
+                        <div class="text-terminal-green-100 rounded bg-red-950 p-2 w-full text-center">Draft</div>
+                    <% elsif blog_post.scheduled? %>
+                        <div class="text-terminal-green-100 rounded bg-sky-950 p-2 w-full text-center">Scheduled</div>
+                    <% end %>
                 </div>
             <% end %>
         </div>

@@ -1,8 +1,11 @@
-<main class="w-full text-terminal-green-100 mt-2">
+<main class="w-full text-terminal-window-100 bg-sky-50 mt-2 py-4">
     <div class="flex justify-center items-center">
-        <div class="flex flex-col items-start"">
-            <h1><%= @blog_post.title %></h1>
-            <p><%= @blog_post.body %></p>
+        <div class="flex flex-col items-center">
+            <% if @blog_post.cover_image.present? %>
+                <%= image_tag @blog_post.cover_image, class: "rounded" %>
+            <% end %>
+            <h1 class="font-bold text-xl my-3"><%= @blog_post.title %></h1>
+            <p><%= @blog_post.content %></p>
         </div>
     </div>
 </main>

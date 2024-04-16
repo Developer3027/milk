@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations]
   devise_for :users
 
+  resources :blog_posts do
+    resource :cover_image, only: [:destroy], module: :blog_posts
+  end
+
   resources :eruditions #//? Courses
   # get 'pages/home' #//! remove if not needed
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -17,10 +21,26 @@ Rails.application.routes.draw do
   # get the admin root
   get "admin" => "admin#index"
 
-  # get the blog root
-  get "blog_posts" => "blog_posts#index"
+  # show form for new article
+  # get "/blog_posts/new", to: "blog_posts#new", as: :new_blog_post
 
-  get "/blog_posts/:id" => "blog_posts#show", as: :blog_post
+  # get specific article
+  # get "/blog_posts/:id", to: "blog_posts#show", as: :blog_post
+
+  # patch / update a specific article
+  # patch "/blog_posts/:id", to: "blog_posts#update"
+
+  # delete / destroy a specific article
+  # delete "/blog_posts/:id", to: "blog_posts#destroy"
+
+  # show edit form article
+  # get "/blog_posts/:id/edit", to: "blog_posts#edit", as: :edit_blog_post
+
+  # save new article to db
+  # post "/blog_posts", to: "blog_posts#create", as: :blog_posts
+
+  # get the blog root
+  get "/blog_posts", to: "blog_posts#index", as: :blogs
 
   # Defines the root path route ("/")
   root "pages#home"
