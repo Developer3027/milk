@@ -1,0 +1,12 @@
+There were a few problems I ran into on publishing my first kinda real article. The first issue is that the rich text field does not word wrap. This is something I am still looking for a solution to.
+
+The second problem was that I am passing the content text of the article body into the cards on the home page. What I wanted was a few sentences, not the entire article.
+
+I know what would probably be best would be to create another column in the table to hold the bit I would take as a copy from the body content probably before saving to the database. However I found a patch that I may just leave.
+
+I reviewing the problem I found this stack overflow article. What I did was use the "to_plain_text" method to format the content, then call "truncate" or "truncate_words" on that text. Truncate(0) takes in a number and returns those number of letters including spaces. Truncate_words(0) takes in a number for the word count and returns those. Here is the code I used.
+
+<%= blog_post.content.to_plain_text.truncate_words(30) %>
+
+Here is the article on Stack Overflow
+Here is the info for truncate

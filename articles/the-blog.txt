@@ -1,0 +1,32 @@
+I found a great blog tutorial series from Go Rails on You Tube. It walked me through the concept of MVC in Rails. Rails is great because, in part, because it is magical. Often times when going through tutorials you will find that it just works with little code involved. "Rails magic" the will say. This series will dive a bit into how that magic works.
+
+When you use the scaffold command with generate, Rails does a lot behind the scenes to give you functionality out of the box. You will get a complete CRUD API that you can immediately use. No questions asked. Awesome.
+
+It is not magic though. Rails is open source, built in the Ruby language, so when you run across magic, you can dive down into the code to see what is going on. I started my journey to learn Ruby and Rails this year, 2024. I have to say I love this journey so far.
+
+The series from Go Rails decides to break down what the scaffold command step by step. It will answer what the Model, View, and Controller is. What code in each should do. How Rails creates helpers for routes and how those routes work.
+
+The blog section of this site was built while going through this series. It did not have everything I was looking for in building this section, but it was certainly more than what I considered a MVP product.
+I wanted a blog so I can write articles while I continue to learn web development, software engineering, and design. I still need to create categories, I have many styling issues, and I need to lock it down so only an admin can create, update or delete.
+
+Here are some of the more interesting aspects of the series:
+
+I knew what CRUD was as I do enjoy Express and React. What was not immediately obvious was the difference between  new and create in Rails. In the new function in the controller, the idea is to present the view for the form and get the object into memory. When submitting is when create is called and the data is saved to the database. So new has a route but create does not.
+
+When creating the scheduling system, we used a date time column in the database. I enjoyed this part of the series. The concept is if there is a date, then the article is either published or scheduled, depending on if the date is in the past or future of the current date. If no date, then it is a draft. With this information you can present badges for the article condition, show or hide articles, and sort them.
+
+I did find that his initial sorting method did not work for me, and it took some digging to figure out why. He did address the issue later in the video. Sorting depends on the database you use. He was using 
+SQL but I was using Postgres. He explained how you can use a SQL query and the error that follows because Rails protects you from SQL injection. He walked through how this has been addressed. This code snippet is the answer he choose and I agree it is more Ruby'ish.
+
+scope :sorted, -> { 
+  order(arel_table[:published_at]
+    .desc.nulls_last)
+    .order(updated_at: :desc) }
+
+He used the Arel Table and gave documentation references which was awesome.
+
+When setting up the blog initially we generated a model with a title as string and the body as a text field. Later we unlocked the action text feature and he showed how to move the data in the body column in the database to the new content column for action text. This also unlocked the image feature of active storage so we dove into AWS S3 buckets, and why such storage would be needed. I already knew this part as I love AWS but there was very little code to write which surprised me. It was pretty much just configuration that was already outlined in Rails.
+
+I highly recommend this series for anyone who would like a better grasp on how Rails uses the MVC concept.
+You can check it out here:
+[Go Rails](https://youtube.com/click-me)
