@@ -2,10 +2,12 @@
     <div class="flex justify-center items-center">
         <div class="flex flex-col items-center">
             <% if @blog_post.cover_image.present? %>
-                <%= image_tag @blog_post.cover_image, class: "rounded" %>
+                <%= image_tag @blog_post.cover_image, class: "rounded w-1/2 md:w-3/4 lg:w-5/6" %>
             <% end %>
             <h1 class="font-bold text-xl my-3"><%= @blog_post.title %></h1>
+            <div class="w-5/6 lg:w-3/4">
             <p><%= @blog_post.content %></p>
+            </div>
         </div>
     </div>
 </main>
