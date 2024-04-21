@@ -11,6 +11,11 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-input-border-100 bg-input-background-100 rounded" %>
         </div>
 
+        <div class="field my-2">
+          <%= f.label :name %><i>(nickname or first name)</i><br />
+          <%= f.text_field :name, class: "border border-input-border-100 bg-input-background-100 rounded" %>
+        </div>
+
         <div class="field">
           <%= f.label :password %>
           <% if @minimum_password_length %>
