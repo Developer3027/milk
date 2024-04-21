@@ -14,10 +14,7 @@ p "Confirmed #{User.count} User records are left."
 
 User.create!([{
   email: "jack@test.com",
-  password: "jack456"
-}, {
-  email: "jess@jess.com",
-  password: "jess456"
+  password: "jack456",
 }])
 
 p "Created #{User.count} users"
@@ -46,3 +43,9 @@ Erudition.create!([{
 }])
 
 p "Created #{Erudition.count} courses"
+
+
+BlogPost.destroy_all
+p "Confirmed #{BlogPost.count} blog post records are left."
+BlogPost.create!(title: "Hello World", content: "This is the first post", user_id: User.first.id)
+p "Created #{BlogPost.count} blog posts"

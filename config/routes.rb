@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admins, skip: [:registrations]
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations",
+  }
 
   resources :blog_posts do
     resource :cover_image, only: [:destroy], module: :blog_posts

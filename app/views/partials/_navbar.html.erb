@@ -36,6 +36,7 @@
     <!-- //? User menu -->
     <nav class="hidden bg-input-border-100 absolute right-2 p-2" data-navbar-target="profile">
         <ul>
+            <li class="my-2 font-bold"><%= current_user.name %><hr></li>
             <li class="my-2"><%= link_to "Profile", edit_user_registration_path %></li><!-- update user link -->
             <li class="my-2">Support</li><!-- stripe donate -->
             <%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border-100 bg-input-background-100 text-input-border-100 px-3 my-2" %>

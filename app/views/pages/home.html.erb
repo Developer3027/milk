@@ -45,7 +45,7 @@
           Thank you and please enjoy.
         </p>
         <% if user_signed_in? %>
-          <p>Good to see you <%= current_user.email %></p>
+          <p class="font-bold">Good to see you <%= current_user.name %></p>
           <%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
         <% else %>
           <h3>Already a member?</h3>

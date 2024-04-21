@@ -15,6 +15,7 @@ class BlogPostsController < ApplicationController
 
   def create
     @blog_post = BlogPost.new(blog_post_params)
+    @blog_post.user = current_user
     if @blog_post.save
       redirect_to @blog_post
     else
