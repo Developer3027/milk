@@ -14,6 +14,7 @@ p "Confirmed #{User.count} User records are left."
 
 User.create!([{
   email: "jack@test.com",
+  name: "Jack",
   password: "jack456",
 }])
 
@@ -44,8 +45,24 @@ Erudition.create!([{
 
 p "Created #{Erudition.count} courses"
 
+# Need some categories
+Category.destroy_all
+p "Confirmed #{Category.count} category records are left."
+
+Category.create!([{
+  name: "Ruby"
+},{
+  name: "Rails"
+},{
+  name: "AWS"
+},{
+  name: "Azure"
+},{
+  name: "Git"
+},])
+p "Created #{Category.count} categories"
 
 BlogPost.destroy_all
 p "Confirmed #{BlogPost.count} blog post records are left."
-BlogPost.create!(title: "Hello World", content: "This is the first post", user_id: User.first.id)
+BlogPost.create!(title: "Hello World", content: "This is the first post", user_id: User.first.id, category_id: Category.first.id)
 p "Created #{BlogPost.count} blog posts"

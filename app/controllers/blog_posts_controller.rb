@@ -1,6 +1,7 @@
 class BlogPostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_blog_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_categories
 
   def index
     @blog_posts = user_signed_in? ? BlogPost.sorted : BlogPost.published.sorted
@@ -42,12 +43,16 @@ class BlogPostsController < ApplicationController
   private
 
   def blog_post_params
-    params.require(:blog_post).permit(:cover_image, :title, :content, :published_at)
+    params.require(:blog_post).permit(:cover_image, :title, :content, :published_at, :category_id)
   end
 
   def set_blog_post
     @blog_post = user_signed_in? ? BlogPost.find(params[:id]) : BlogPost.published.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     redirect_to blogs_path
+  end
+
+  def set_categories
+    @categories = Category.all.order(:name)
   end
 end

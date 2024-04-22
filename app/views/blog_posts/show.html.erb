@@ -1,12 +1,18 @@
 <main class="w-full text-terminal-window-100 bg-sky-50 mt-2 py-4">
     <div class="flex justify-center items-center">
         <div class="flex flex-col items-center">
+            <h1 class="font-bold text-xl my-3"><%= @blog_post.title %></h1>
             <% if @blog_post.cover_image.present? %>
                 <%= image_tag @blog_post.cover_image, class: "rounded w-1/2 md:w-3/4 lg:w-5/6" %>
             <% end %>
-            <h1 class="font-bold text-xl my-3"><%= @blog_post.title %></h1>
-            <p>Author: <%= @blog_post.user.name %></p>
-            <div class="w-5/6 lg:w-3/4">
+            <div class="flex justify-between w-1/2 md:w-3/4 lg:w-5/6 my-3 mx-1">
+                <span>Author: <%= @blog_post.user.name %></span>
+                <span class="bg-sky-400 rounded-full px-3"><%= @blog_post.category.name %></span>
+            </div>
+            <div class="flex justify-start w-1/2 md:w-3/4 lg:w-5/6 my-3 mx-1">
+                <span>Created: <%= @blog_post.created_at.to_date.inspect %></span>
+            </div>
+            <div class="w-1/2 md:w-3/4 lg:w-5/6">
             <p><%= @blog_post.content %></p>
             </div>
         </div>
