@@ -40,6 +40,8 @@ class BlogPostsController < ApplicationController
     redirect_to blogs_path
   end
 
+
+
   private
 
   def blog_post_params

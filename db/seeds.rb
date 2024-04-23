@@ -22,7 +22,9 @@ p "Created #{User.count} users"
 
 # Devise created admin, needs email and password
 Admin.destroy_all
-p "Confirmed #{Admin.count} admin records are left."
+p "Confirmed #{Admin.count} admin records are left.",{
+  name: "Git"
+},
 
 Admin.create!({
   email: "admin@admin.com",
@@ -59,7 +61,9 @@ Category.create!([{
   name: "Azure"
 },{
   name: "Git"
-},])
+},{
+  name: "General"
+}])
 p "Created #{Category.count} categories"
 
 BlogPost.destroy_all

@@ -21,6 +21,7 @@ module.exports = {
       'terminal-window': { '100': '#141414' },
       'input-background': { '100': '#1E1E1E' },
       'input-border': { '100': '#BCA465' },
+      slate: colors.slate,
       sky: colors.sky,
       red: colors.red,
     },

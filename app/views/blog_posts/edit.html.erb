@@ -1,9 +1,18 @@
-<main class="w-full text-terminal-window-100 bg-input-border-100 mt-2">
-    <div class="flex justify-center items-center">
-        <div class="flex flex-col items-start pb-5">
-            <h1>Edit Blog ( no. <%= @blog_post.id %> )</h1>
-            <%= render partial: "blog_posts/partials/form", locals: { blog_post: @blog_post } %>
-            <%= button_to "Delete", @blog_post, class: "border border-input-background-100 rounded bg-red-400 py-1 px-2 my-2", method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<% if @blog_post.user.name == current_user.name %>
+    <main class="w-full text-terminal-window-100 bg-input-border-100 mt-2">
+        <div class="flex justify-center items-center">
+            <div class="flex flex-col items-start pb-5">
+                <h1>Edit Blog ( no. <%= @blog_post.id %> )</h1>
+                <%= render partial: "blog_posts/partials/form", locals: { blog_post: @blog_post } %>
+                <%= button_to "Delete", @blog_post, class: "border border-input-background-100 rounded bg-red-400 py-1 px-2 my-2", method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
+<% else %>
+    <main class="w-full h-screen">
+        <div class="flex justify-center items-center flex-col w-full h-screen">
+            <h1 class="text-red-300 my-3">Oops! It appears that you are not the owner of this post.</h1>
+            <%= link_to "Back to Blogs", blogs_path, class: "underline text-sky-300" %>
+        </div>
+    </main>
+<% end %>

@@ -1,3 +1,6 @@
+Photo by <a href="https://unsplash.com/@mhnsw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Museums of History New South Wales</a> on <a href="https://unsplash.com/photos/a-black-and-white-photo-of-a-group-of-people-walking-on-a-train-track-5w9xRPQCzmw?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
+
 I found a great blog tutorial series from Go Rails on You Tube. It walked me through the concept of MVC in Rails. Rails is great because, in part, because it is magical. Often times when going through tutorials you will find that it just works with little code involved. "Rails magic" the will say. This series will dive a bit into how that magic works.
 
 When you use the scaffold command with generate, Rails does a lot behind the scenes to give you functionality out of the box. You will get a complete CRUD API that you can immediately use. No questions asked. Awesome.
