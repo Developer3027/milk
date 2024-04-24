@@ -1,0 +1,13 @@
+For this project I have decided to utilize the tools available from github. This project has both a github project and a github wiki. My IDE of choice is vsCode. I wanted to write a quick article that outlines my build process.
+
+The github project is where I create the tack cards. As I build various sections or features I will have a idea of what I would like to have. As I have those ideas I create a task card, this way I don't forget them. Later I can return to them and flush them out. I keep tasks short on purpose. The objective is to get in and get out.
+
+Once I am ready to work on a task, I move the card to the "in Progress" column. I open the card and make it an issue, assigning it to MILK. I then create the branch from within the card. Github will create the branch from the issue and present me with the git commands to pull from main, create the new branch and move to it.
+
+I tend to use the linux terminal and not the vsCode terminal. I just prefer to have the terminal window below my browser. There is something satisfying about watching the server logs scroll as work is done. I tend to verify with "git status" to ensure I am on the correct branch and work can start.
+
+I will work the new feature until I am satisfied with the result then commit and push the branch to github. Github will notice the push and suggest the pull request. I create the pull request and merge to the main branch if there are no conflicts. There are never conflicts because I work on one card at a time. Once the merge is complete I will delete the branch on Github.
+
+Locally I will switch to the main branch and pull from origin main. This will pull the update from github. I will use the list flag for branch, "git branch --list" to show the branches local. I can then "git branch -D <feature>" where feature is the branch name. This will delete that branch locally and I am good to start the next feature.
+
+I have found that I really like this workflow. I hope it helps you.
