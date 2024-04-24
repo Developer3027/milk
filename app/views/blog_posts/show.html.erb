@@ -1,7 +1,9 @@
 <main class="w-full text-terminal-window-100 bg-slate-50 mt-2 py-4">
     <div class="flex justify-center items-center">
         <div class="flex flex-col items-center">
-            <h1 class="font-bold text-2xl py-4"><%= @blog_post.title %></h1>
+            <h1 class="font-bold text-2xl py-4">
+                <%= @blog_post.title %>
+            </h1>
             <% if @blog_post.cover_image.present? %>
                 <%= image_tag @blog_post.cover_image, class: "rounded w-1/2 md:w-3/4 h-96 object-cover" %>
             <% end %>

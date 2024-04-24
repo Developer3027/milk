@@ -46,6 +46,9 @@ Rails.application.routes.draw do
   # get the blog root
   get "/blog_posts", to: "blog_posts#index", as: :blogs
 
+  # get the feature blog
+  get "pages/feature", to: "pages#feature", as: :feature
+
   # Defines the root path route ("/")
   root "pages#home"
 end
