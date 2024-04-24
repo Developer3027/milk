@@ -33,20 +33,6 @@ Admin.create!({
 
 p "Created #{Admin.count} admins"
 
-# erudition needs title and description
-Erudition.destroy_all
-p "Confirmed #{Erudition.count} course records are left."
-
-Erudition.create!([{
-  title: "Ruby",
-  description: "Short course to get a handle on the Ruby language."
-},{
-  title: "Rails",
-  description: "Short course will give a solid foundation on Rails."
-}])
-
-p "Created #{Erudition.count} courses"
-
 # Need some categories
 Category.destroy_all
 p "Confirmed #{Category.count} category records are left."

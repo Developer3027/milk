@@ -6,4 +6,7 @@ class PagesController < ApplicationController
   def feature
   end
 
+  def erudition
+  end
+
 end
