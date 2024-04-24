@@ -27,25 +27,25 @@
   <div class=" flex flex-col flex-grow w-1/3 p-4 sticky top-20 h-[calc(100vh-80px)] overflow-auto scroll-mx-1">
     <!-- //? page content -->
     <div class="">
-      <div class="font-mPlusCode fw-bold ">
-        <h4>Welcome to MILK,</h4>
-        <p class="text-sm">
+      <div class="font-mPlusCode fw-bold">
+        <h4 class="py-3">Welcome to MILK,</h4>
+        <p class="text-sm py-2">
           My name is Mason Roberts, Developer3027. This is my little corner of the internet. I am an automotive technician living in the Carolina’s, US. I have been studying development and software engineering for the past several years.
         </p>
-        <p class="text-sm">
+        <p class="text-sm" py-2>
           This project aims to gather all my favorite projects together in one box, one container, one kist, that I can work on and enjoy.
         </p>
-        <p class="text-sm">
+        <p class="text-sm py-2">
           Built in Rails, I hope you enjoy what I am building here. This is a collection of what I have learned, learning, and enjoy. I encourage you to check out the various content providers I have collected here. They are talented people working hard to teach and entertain. I need them organized a little differently. I helps me learn, helps me grow.
         </p>
-        <p class="text-sm">
+        <p class="text-sm py-2">
           If you find you like what I am doing and if it helps you, consider supporting. This project is open source and all providers collected here are transparent for you. The only thing I claim as my own is the thought put into this concept. As one may gather music to enjoy later, I have collected these bright points found on the web, so I may enjoy them later.
         </p>
         <p class="text-sm py-2">
           Thank you and please enjoy.
         </p>
         <% if user_signed_in? %>
-          <p class="font-bold">Good to see you <%= current_user.name %></p>
+          <p class="font">Good to see you <%= current_user.name %></p>
           <%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
         <% else %>
           <h3>Already a member?</h3>
