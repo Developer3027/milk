@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :courses
   resources :categories
   devise_for :admins, skip: [:registrations]
   devise_for :users, controllers: {
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
     resource :cover_image, only: [:destroy], module: :blog_posts
   end
 
-  resources :eruditions #//? Courses
+  # resources :eruditions #//? Courses
   # get 'pages/home' #//! remove if not needed
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -48,6 +49,9 @@ Rails.application.routes.draw do
 
   # get the feature blog
   get "pages/feature", to: "pages#feature", as: :feature
+
+  # get the erudition landing page
+  get "pages/erudition", to: "pages#erudition", as: :erudition
 
   # Defines the root path route ("/")
   root "pages#home"
