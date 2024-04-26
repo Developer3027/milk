@@ -1,0 +1,29 @@
+Photo by <a href="https://unsplash.com/@impatrickt?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Patrick Tomasso</a> on <a href="https://unsplash.com/photos/vintage-white-and-black-television-GfDyRbLofHg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  
+Creating a landing page
+
+A landing page is an important tool for a site. It is the first place a visitor will see when they stop by. It is charged with presenting the who, what, when, where of it all. This page needs to give all the relevant information for the meaning of it's life in as few words as possible. In short, it needs to sell, at the very least, stir a little curiousness over what it's about. That is not the focus of this article though.
+
+This project is a bit different in scope, and so every section has a landing page. Here I just want to give a quick overview of how I created the static pages. They are static because there is no data being pulled from a database. They do not update. They are static and simply provide information, provide direction into the site, look pretty, feel comfortable.
+
+When setting up the initial project, I ran this command:
+
+rails g controller pages home
+
+It is a common command used by many content providers to get started. The initial set up of a new rails application does present a home screen, but it is not very useful. Running the above command creates the controller to lay the ground work for the static page. From here you need to create the folder "pages" in the "view" folder. Then create the "home.html.erb" file in the "pages" folder.
+
+Here you have the controller and the view, don't need a model, the page is static. Last step, you need to provide a route. When initially setting up the project, typically you just make the new home page the root of the app with uncommenting the last bit of code at the bottom of the routes file, located in the config folder.
+
+root "pages#home"
+
+I continue to use that pages controller for all my static pages. I write a new def block with the new name. for example:
+
+def help
+end
+
+Create the new "help" view. For the route, I am not looking for a new root to the app. It will also fall outside of the resources built by rails when you scaffold. I just need a route that shows the landing page. Here is what I have done:
+
+# get the erudition landing page
+  get "pages/help", to: "pages#help", as: :help
+
+For more information on routeing in rails, check out the [guide](https://guides.rubyonrails.org/routing.html). This is for Rails 7
