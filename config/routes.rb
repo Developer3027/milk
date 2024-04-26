@@ -53,6 +53,8 @@ Rails.application.routes.draw do
   # get the erudition landing page
   get "pages/erudition", to: "pages#erudition", as: :erudition
 
+  get "pages/hermit", to: "pages#hermit", as: :hermit
+
   # Defines the root path route ("/")
   root "pages#home"
 

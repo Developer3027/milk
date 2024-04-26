@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   def erudition
   end
 
+  def hermit
+  end
+
 end
