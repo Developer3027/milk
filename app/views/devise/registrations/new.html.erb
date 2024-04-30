@@ -1,4 +1,4 @@
-<div class="w-full text-terminal-green-100 mt-2">
+<div class="w-full text-terminal-green mt-2">
   <div class="flex justify-center items-center">
     <div class="flex flex-col items-start">
       <h2 class="font-bold text-xl">Sign up</h2>
@@ -8,12 +8,17 @@
 
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-input-border-100 bg-input-background-100 rounded" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-input-border bg-input-background rounded" %>
         </div>
 
         <div class="field my-2">
           <%= f.label :name %><i>(nickname or first name)</i><br />
-          <%= f.text_field :name, class: "border border-input-border-100 bg-input-background-100 rounded" %>
+          <%= f.text_field :name, class: "border border-input-border bg-input-background rounded" %>
+        </div>
+
+        <div class="field my-2">
+          <%= f.label :bio %><i>(Short bio)</i><br />
+          <%= f.text_area :bio, class: "border border-input-border bg-input-background rounded", rows: "8", cols: "40" %>
         </div>
 
         <div class="field">
@@ -21,16 +26,16 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "border border-input-border-100 bg-input-background-100 rounded" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "border border-input-border bg-input-background rounded" %>
         </div>
 
         <div class="field">
           <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-input-border-100 bg-input-background-100 rounded" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-input-border bg-input-background rounded" %>
         </div>
 
         <div class="actions my-3">
-          <%= f.submit "Sign up", class: "border rounded-sm border-input-border-100 bg-input-background-100 px-3 my-2" %>
+          <%= f.submit "Sign up", class: "border rounded-sm border-input-border bg-input-background px-3 my-2" %>
         </div>
       <% end %>
 

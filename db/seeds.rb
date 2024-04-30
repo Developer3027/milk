@@ -8,24 +8,34 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# Devise created users, needs email and password
+# destroy blogs
+BlogPost.destroy_all
+p "Confirmed #{BlogPost.count} blog post records are left."
+
+# destroy users
 User.destroy_all
 p "Confirmed #{User.count} User records are left."
 
+# destroy admins
+Admin.destroy_all
+p "Confirmed #{Admin.count} admin records are left."
+
+# destroy categories
+Category.destroy_all
+p "Confirmed #{Category.count} category records are left."
+
+# create user
 User.create!([{
   email: "jack@test.com",
   name: "Jack",
+  bio: "Best programmer ever",
   password: "jack456",
 }])
 
 p "Created #{User.count} users"
 
-# Devise created admin, needs email and password
-Admin.destroy_all
-p "Confirmed #{Admin.count} admin records are left.",{
-  name: "Git"
-},
 
+# create admin
 Admin.create!({
   email: "admin@admin.com",
   password: "admin456"
@@ -33,10 +43,7 @@ Admin.create!({
 
 p "Created #{Admin.count} admins"
 
-# Need some categories
-Category.destroy_all
-p "Confirmed #{Category.count} category records are left."
-
+# craete some categories
 Category.create!([{
   name: "Ruby"
 },{
@@ -52,7 +59,6 @@ Category.create!([{
 }])
 p "Created #{Category.count} categories"
 
-BlogPost.destroy_all
-p "Confirmed #{BlogPost.count} blog post records are left."
+# create a blog post
 BlogPost.create!(title: "Hello World", content: "This is the first post", user_id: User.first.id, category_id: Category.first.id)
 p "Created #{BlogPost.count} blog posts"
