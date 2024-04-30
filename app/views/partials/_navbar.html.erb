@@ -10,12 +10,12 @@
         <!-- //? Right section Page Links -->
         <div class="flex flex-grow justify-end ">
             <ul class="flex space-x-2">
-                <li class="hidden md:flex"><%= link_to "blog", blogs_path %></li>
-                <li class="hidden md:flex"><%= link_to "erudition", erudition_path %></li>
-                <li class="hidden md:flex"><%= link_to "hermit", hermit_path%></li>
-                <li class="hidden md:flex">tunez</li>
-                <li class="hidden md:flex">car-wash</li>
-                <li class="hidden md:flex">salt&oak</li>
+                <li class="hidden md:flex"><%= link_to "Blog", blogs_path %></li>
+                <li class="hidden md:flex"><%= link_to "Erudition", erudition_path %></li>
+                <li class="hidden md:flex"><%= link_to "Hermit+", hermit_path%></li>
+                <li class="hidden md:flex">Salt&Oak</li>
+                <li class="hidden md:flex">Thatch</li>
+                <li class="hidden md:flex">Car Wash</li>
                 <% if user_signed_in? %>
                     <li>
                         <button role="button" aria-label="menu" data-action="click->navbar#profileToggle">
@@ -49,12 +49,12 @@
     <!-- //? Dropdown menu - mobile -->
     <nav class="hidden bg-input-border absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
         <ul class="flex flex-col py-2 px-3">
-            <%= link_to blogs_path do %><li class="flex border border-terminal-window p-1 my-1 rounded-sm">Blog</li><% end %>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "erudition", erudition_path%></li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "hermit", hermit_path%></li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">tunez</li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">car-wash</li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">salt&oak</li>
+            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Blog", blogs_path %></li>
+            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Erudition", erudition_path%></li>
+            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Hermit+", hermit_path%></li>
+            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">Salt&Oak</li>
+            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">Thatch</li>
+            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">Car Wash</li>
         </ul>
     </nav>
 </div>
