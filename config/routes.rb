@@ -55,6 +55,9 @@ Rails.application.routes.draw do
 
   get "hermit", to: "pages#hermit", as: :hermit
 
+  # landing page route for salt and tar
+  get "salt_and_oak", to: "pages#salt_and_oak", as: :salt_and_oak
+
   # Defines the root path route ("/")
   root "pages#home"
 

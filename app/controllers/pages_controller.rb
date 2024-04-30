@@ -12,4 +12,7 @@ class PagesController < ApplicationController
   def hermit
   end
 
+  def salt_and_oak
+  end
+
 end
