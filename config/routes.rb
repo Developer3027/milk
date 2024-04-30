@@ -53,10 +53,14 @@ Rails.application.routes.draw do
   # get the erudition landing page
   get "erudition", to: "pages#erudition", as: :erudition
 
+  # get the hermit landing page
   get "hermit", to: "pages#hermit", as: :hermit
 
-  # landing page route for salt and tar
+  # get the salt and tar landing page
   get "salt_and_oak", to: "pages#salt_and_oak", as: :salt_and_oak
+
+  # get the thatch landing page
+  get "thatch", to: "pages#thatch", as: :thatch
 
   # Defines the root path route ("/")
   root "pages#home"
