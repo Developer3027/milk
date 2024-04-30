@@ -45,15 +45,15 @@ Rails.application.routes.draw do
   # post "/blog_posts", to: "blog_posts#create", as: :blog_posts
 
   # get the blog root
-  get "/blog_posts", to: "blog_posts#index", as: :blogs
+  get "/blog", to: "blog_posts#index", as: :blogs
 
   # get the feature blog
-  get "pages/feature", to: "pages#feature", as: :feature
+  get "feature", to: "pages#feature", as: :feature
 
   # get the erudition landing page
-  get "pages/erudition", to: "pages#erudition", as: :erudition
+  get "erudition", to: "pages#erudition", as: :erudition
 
-  get "pages/hermit", to: "pages#hermit", as: :hermit
+  get "hermit", to: "pages#hermit", as: :hermit
 
   # Defines the root path route ("/")
   root "pages#home"
