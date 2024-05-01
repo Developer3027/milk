@@ -129,6 +129,9 @@ GEM
       thor (>= 0.14.0, < 2)
     font-awesome-sass (6.5.1)
       sassc (~> 2.0)
+    git (1.19.1)
+      addressable (~> 2.8)
+      rchardet (~> 1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.4)
@@ -231,6 +234,7 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.1.0)
+    rchardet (1.8.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
@@ -312,6 +316,7 @@ DEPENDENCIES
   devise (~> 4.9)
   figaro
   font-awesome-sass (~> 6.5.1)
+  git (~> 1.19)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
