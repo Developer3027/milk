@@ -82,3 +82,5 @@ end
 
 # access for s3 bucket, amazon
 gem "aws-sdk-s3", require: false
+
+gem "git", "~> 1.19"

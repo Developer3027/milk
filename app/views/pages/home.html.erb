@@ -23,7 +23,7 @@
       <div class="flex space-x-2 justify-between px-2">
         <!-- //? Give git info to page --> 
         <code class=" text-sm">
-          commit: - <%= %x{ git log --pretty=format:"%h - %an, %ar : %s" -1 } %>
+          commit: - <%= @commit_info %>
         </code>
       </div>
     </div>
