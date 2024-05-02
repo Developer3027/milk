@@ -23,7 +23,9 @@
       <div class="flex space-x-2 justify-between px-2">
         <!-- //? Give git info to page --> 
         <code class=" text-sm">
+          <% if @commit_info %>
           commit: - <%= @commit_info %>
+          <% end %>
         </code>
       </div>
     </div>
