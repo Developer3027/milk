@@ -6,8 +6,11 @@ class PagesController < ApplicationController
     client = Octokit::Client.new
     commit = client.commits('Developer3027/milk').first
     commit_message = commit.commit.message
+    commit_date = commit.commit.author.date
+    time_zone = 'Eastern Time (US & Canada)'
+    formatted_date = commit_date.in_time_zone(time_zone).strftime("%B %d, %Y %H:%M")
 
-    @commit_info = commit_message
+    @commit_info = "#{commit_message} - #{formatted_date}"
   end
 
   def feature
