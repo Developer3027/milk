@@ -1,14 +1,13 @@
-require 'git'
+require 'octokit'
 
 class PagesController < ApplicationController
 
   def home
-    git_log = Git.open(Rails.root).log.first
-    commit_message = git_log.message
-    author_name = git_log.author.name
-    author_date = git_log.author.date.strftime('%Y-%m-%d %H:%M:%S')
+    client = Octokit::Client.new
+    commit = client.commits('Developer3027/milk').first
+    commit_message = commit.commit.message
 
-    @commit_info = "#{commit_message} - #{author_name}, #{author_date}"
+    @commit_info = commit_message
   end
 
   def feature

@@ -83,4 +83,5 @@ end
 # access for s3 bucket, amazon
 gem "aws-sdk-s3", require: false
 
-gem "git", "~> 1.19"
+# add octokit for github
+gem "octokit", "~> 8.1.0"
