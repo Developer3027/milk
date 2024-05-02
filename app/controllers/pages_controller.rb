@@ -3,7 +3,7 @@ require 'octokit'
 class PagesController < ApplicationController
 
   def home
-    client = Octokit::Client.new
+    client = Octokit::Client.new( access_token: ENV['PERSONAL_ACCESS_TOKEN'] )
     commit = client.commits('Developer3027/milk').first
     commit_message = commit.commit.message
     commit_date = commit.commit.author.date
