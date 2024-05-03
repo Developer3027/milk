@@ -1,7 +1,7 @@
-<main class="w-full text-terminal-window-100 bg-input-border-100 mt-2">
-    <div class="flex justify-center items-center">
-        <div class="flex flex-col items-start pb-5">
-            <h1>Create New Blog</h1>
+<main class="w-full flex justify-center items-center text-terminal-window mt-2">
+    <div class="lg:w-4/5 flex justify-center items-center lg:bg-slate-600">
+        <div class="flex flex-col justify-start items-start pb-5">
+            <h1 class="my-2 text-xl bg-sky-50 p-2 rounded-sm">Create New Blog</h1>
             <%= render partial: "blog_posts/partials/form", locals: { blog_post: @blog_post } %>
         </div>
     </div>

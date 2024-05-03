@@ -1,10 +1,12 @@
 <% if @blog_post.user.name == current_user.name %>
-    <main class="w-full text-terminal-window-100 bg-input-border-100 mt-2">
-        <div class="flex justify-center items-center">
-            <div class="flex flex-col items-start pb-5">
-                <h1>Edit Blog ( no. <%= @blog_post.id %> )</h1>
+    <main class="w-full flex justify-center items-center text-terminal-window mt-2">
+        <div class="lg:w-4/5 flex justify-center items-center lg:bg-slate-600">
+            <div class="flex flex-col justify-start items-start pb-5">
+                <h1 class="m-2 text-xl bg-sky-50 p-2 rounded-sm">Edit Blog ( no. <%= @blog_post.id %> )</h1>
                 <%= render partial: "blog_posts/partials/form", locals: { blog_post: @blog_post } %>
-                <%= button_to "Delete", @blog_post, class: "border border-input-background-100 rounded bg-red-400 py-1 px-2 my-2", method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+                <div class="flex justify-center items-center w-full">
+                    <%= button_to "Delete", @blog_post, class: "border border-input-background-100 rounded bg-red-400 py-1 px-2 my-2", method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+                </div>
             </div>
         </div>
     </main>
