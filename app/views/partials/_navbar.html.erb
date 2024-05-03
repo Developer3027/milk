@@ -49,11 +49,11 @@
     <!-- //? Dropdown menu - mobile -->
     <nav class="hidden bg-input-border absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
         <ul class="flex flex-col py-2 px-3">
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Blog", blogs_path %></li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Erudition", erudition_path%></li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Hermit+", hermit_path%></li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Salt&Oak", salt_and_oak_path%></li>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm"><%= link_to "Thatch", thatch_path%></li>
+            <%= link_to blogs_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Blog</li><% end %>
+            <%= link_to erudition_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Erudition</li><% end %>
+            <%= link_to hermit_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Hermit+</li><% end %>
+            <%= link_to salt_and_oak_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Salt&Oak</li><% end %>
+            <%= link_to thatch_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Thatch</li><% end %>
             <li class="flex border border-terminal-window p-1 my-1 rounded-sm">Car Wash</li>
         </ul>
     </nav>
