@@ -77,3 +77,29 @@ _org design_ : [dribble](https://dribbble.com/shots/16547710/attachments/1156872
 _org site_ : [vercel](https://erudition-saa-c02.vercel.app/)
 
 Online school/boot camp for users. 
+
+## Hermit+
+
+_Resources_
+
+_live landing_ : [aws s3](https://www.hermitplus.com/)
+
+_character concept_ : [org site](https://www.mason-roberts.dev/hermits)
+
+_org design_ : [Figma](https://www.figma.com/file/1rA5nLglFEz6F1453wKwkG/Hermit-Plus?type=design&mode=design&t=1dy1b6GROUitv0zb-1)
+
+## Salt & Oak
+
+_Resources_
+
+_live landing_ : [org site](https://www.mason-roberts.dev/salt-and-tar)
+
+_org design_ : [Figma](https://www.figma.com/file/dCAzFHKupofhmKft0Anl5L/Salt-and-Tar?type=design&mode=design&t=1dy1b6GROUitv0zb-1)
+
+## Thatch
+
+## Car Wash
+
+_Resources_
+
+_design_ : [dribble](https://dribbble.com/shots/18892370--2-TrueDetail)

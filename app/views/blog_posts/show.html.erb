@@ -1,15 +1,15 @@
 <main class="w-full text-terminal-window-100 bg-slate-50 mt-2 py-4">
     <div class="flex justify-center items-center">
         <div class="flex flex-col items-center">
-            <h1 class="font-bold text-2xl py-4">
+            <h1 class="font-bold text-xl md:text-2xl p-4">
                 <%= @blog_post.title %>
             </h1>
             <% if @blog_post.cover_image.present? %>
                 <%= image_tag @blog_post.cover_image, class: "md:rounded md:w-3/4 lg:w-4/5 h-96 object-cover" %>
             <% end %>
-            <div class="flex justify-between md:w-3/4 lg:w-4/5 my-3 mx-1">
+            <div class="flex justify-between md:w-3/4 lg:w-4/5 my-3 md:mx-1 w-full px-1">
                 <span>Author: <%= @blog_post.user.name %></span>
-                <span class="bg-input-border rounded-4/5 px-5"><%= @blog_post.category.name %></span>
+                <span class="bg-input-border rounded-full px-5"><%= @blog_post.category.name %></span>
             </div>
             <div class="flex justify-start md:w-3/4 lg:w-4/5 my-3 mx-1">
                 <span>Created: <%= @blog_post.created_at.to_date.inspect %></span>
