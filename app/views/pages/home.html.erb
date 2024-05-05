@@ -23,8 +23,8 @@
       <div class="flex space-x-2 justify-between px-2">
         <!-- //? Give git info to page --> 
         <code class=" text-sm">
-          <% if @commit_info %>
-          commit: - <%= @commit_info %>
+          <% if @commit_message %>
+          commit: - <%= @commit_message %> (<%= time_ago_in_words(@commit_date) %> ago)
           <% end %>
         </code>
       </div>

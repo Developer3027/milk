@@ -10,7 +10,8 @@ class PagesController < ApplicationController
     time_zone = 'Eastern Time (US & Canada)'
     formatted_date = commit_date.in_time_zone(time_zone).strftime("%B %d, %Y %H:%M")
 
-    @commit_info = "#{commit_message} - #{formatted_date}"
+    @commit_message = "#{commit_message}"
+    @commit_date = "#{formatted_date}"
   end
 
   def feature
