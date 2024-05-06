@@ -1,0 +1,57 @@
+<!-- component -->
+<main class="flex min-h-screen items-center justify-center bg-gradient-to-tr from-stone-950 from-40% via-zinc-600 to-stone-800 w-full"  data-controller="audio-player" data-audio-player-url-value="<%= url_for(@thatch.song) if @thatch.song.attached? %>" >
+  <div class="w-2/3">
+    <div class="bg-gradient-to-tr from-yellow-600 from-50% via-yellow-400 to-orange-700 dark:border-slate-500 border-b rounded-xl p-4 pb-6 sm:p-10 sm:pb-8 lg:p-6 xl:p-10 xl:pb-8 space-y-6 sm:space-y-8 lg:space-y-6 xl:space-y-8  items-center">
+        <div class="flex items-center justify-between space-x-4">
+          <%= image_tag(@thatch.album_art, alt: "cover art for the song", size: "88x88", loading: "lazy", class: "flex-none rounded-lg bg-slate-100 border border-slate-900") if @thatch.album_art.attached? %>
+          <div class="flex-auto space-y-1 font-semibold w-full">
+            <p class="text-slate-800 text-sm leading-6">
+              <%= @thatch.song_title %>
+            </p>
+            <h2 class="text-slate-800 text-sm leading-6 truncate">
+              <abbr>Posted by: </abbr> <%= @thatch.user.name %>
+            </h2>
+            <span class="text-slate-900 text-md">
+              <%= @thatch.artist %>
+            </span>
+            <span class="text-slate-800 text-xs">
+              posted <%= time_ago_in_words(@thatch.created_at) %> ago
+            </span>
+          </div>
+          <div data-audio-player-target="eq" class="">
+            
+          </div>
+      </div>
+      <div class="space-y-2">
+        <div class="relative">
+          <div class="bg-slate-700 rounded">
+            <div class="w-full mx-auto h-20 pt-1">
+              <div data-audio-player-target="preview" class="w-full h-12"></div>
+              <div class="w-full mx-auto flex flex-col items-center mt-1 p-2 rounded-b bg-slate-700">
+                <div class="flex justify-between items center w-full text-sm leading-6 font-medium tabular-nums">
+                  <div data-audio-player-target="timeEl" class="text-slate-100">0:00</div>
+                  <div>
+                    <%= link_to "#", data: { action: "audio-player#togglePlaying" } do %>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+                      </svg>
+
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-10 hidden">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+                      </svg>
+                    <% end %>
+                  </div>
+                  <div data-audio-player-target="durationEl" class="text-slate-400">0:00</div>
+                </div>
+              
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      <div class="text-center w-full underline py-5 text-slate-900"><%= link_to "<-- Return to folders", thatches_path %></div>
+    </div>
+  </div>
+</main>

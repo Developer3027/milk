@@ -1,0 +1,20 @@
+<main class="w-full h-screen justify-center items-center py-2">
+
+  <% content_for :title, "Thatches" %>
+
+  <div class="flex justify-center items-center w-full h-full bg-gradient-to-tr from-stone-950 from-40% via-zinc-600 to-stone-800">
+    <div class="flex flex-col justify-center w-5/6">
+      <!-- <h1 class="font-bold text-4xl text-center py-5 text-white">Thatches</h1> -->
+      <%#= link_to "New thatch", new_thatch_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+      <div id="thatches" class="flex flex-wrap justify-evenly min-w-full p-5 bg-zinc-900 rounded border border-slate-600">
+        <% @thatches.each do |thatch| %>
+          <%= render thatch %>
+          <p>
+            <%#= link_to "Show this thatch", thatch, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</main>

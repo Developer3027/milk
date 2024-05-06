@@ -26,7 +26,7 @@ class PagesController < ApplicationController
   def salt_and_oak
   end
 
-  def thatch
+  def tune
   end
 
 end
