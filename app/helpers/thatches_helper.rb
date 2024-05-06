@@ -1,0 +1,2 @@
+module ThatchesHelper
+end

@@ -8,3 +8,4 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "stimulus-use" # @0.52.2
 pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
+pin "wavesurfer.js" # @7.7.13

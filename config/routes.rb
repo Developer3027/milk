@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :thatches
   resources :courses
   resources :categories
   devise_for :admins, skip: [:registrations]
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
   end
 
   # resources :eruditions #//? Courses
-  # get 'pages/home' #//! remove if not needed
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   authenticated :admin_user do
@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   get "salt_and_oak", to: "pages#salt_and_oak", as: :salt_and_oak
 
   # get the thatch landing page
-  get "thatch", to: "pages#thatch", as: :thatch
+  get "tune", to: "pages#tune", as: :tune
 
   # Defines the root path route ("/")
   root "pages#home"

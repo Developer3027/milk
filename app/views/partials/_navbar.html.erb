@@ -14,7 +14,7 @@
                 <li class="hidden md:flex"><%= link_to "Erudition", erudition_path %></li>
                 <li class="hidden md:flex"><%= link_to "Hermit+", hermit_path%></li>
                 <li class="hidden md:flex"><%= link_to "Salt&Oak", salt_and_oak_path%></li>
-                <li class="hidden md:flex"><%= link_to "Thatch", thatch_path%></li>
+                <li class="hidden md:flex"><%= link_to "Thatch", tune_path%></li>
                 <li class="hidden md:flex">Car Wash</li>
                 <% if user_signed_in? %>
                     <li>
@@ -53,7 +53,7 @@
             <%= link_to erudition_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Erudition</li><% end %>
             <%= link_to hermit_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Hermit+</li><% end %>
             <%= link_to salt_and_oak_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Salt&Oak</li><% end %>
-            <%= link_to thatch_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Thatch</li><% end %>
+            <%= link_to tune_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Thatch</li><% end %>
             <li class="flex border border-terminal-window p-1 my-1 rounded-sm">Car Wash</li>
         </ul>
     </nav>
