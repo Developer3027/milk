@@ -96,7 +96,17 @@ _live landing_ : [org site](https://www.mason-roberts.dev/salt-and-tar)
 
 _org design_ : [Figma](https://www.figma.com/file/dCAzFHKupofhmKft0Anl5L/Salt-and-Tar?type=design&mode=design&t=1dy1b6GROUitv0zb-1)
 
-## Thatch
+## Jukebox
+
+_Resources_
+
+_design_ : [Andre Rio - Dribble](https://dribbble.com/shots/21768063-Filemer-Web-Design)
+
+_landing design_ : [Figma](https://www.figma.com/file/PQJGzDMUfcqfTLCjiYm0So/Dev3027-Portfolio?type=design&node-id=0%3A1&mode=design&t=LPKwLezxe0ZpJdSs-1)
+
+This part of the project is an app concept that allows for the play of one song at a time. Pick the song, play the song. It allows for one to focus on the music they love and listen to the song, feel and hear it. Like for the first time when they smiled, cried, or stopped dead in there tracks.
+
+This part of the project is proving very difficult. I am having issues with the design as well as the functionality. There are so many ways to organize the vast amounts of data for a simple song.
 
 ## Car Wash
 
