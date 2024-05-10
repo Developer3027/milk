@@ -1,0 +1,10 @@
+Here is how I attached the video to the lesson in the rails console.
+
+I am dealing with only one course, so I need to get that first course and assign it to a variable I can reference easily. Here I picked "c".
+c = course.find 1
+
+Now that I have the course, I need to get the first lesson in the course. Again I am going to assign it to a variable I can reference easily. Here I picked "l".
+l = c.lessons.first
+
+Now to attach the video to the lesson. I used the attach method.
+l.video.attach(io: File.open("/home/masonroberts/Downloads/UMD4/S&T Ep279.mp4"), filename: "S&T Ep279.mp4")

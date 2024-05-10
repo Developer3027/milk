@@ -1,15 +1,31 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<main class="flex flex-col lg:flex-row mx-auto pb-6 bg-slate-50">
+  <div class="mx-auto w-full lg:px-4">
 
-    <%= render @course %>
-
-    <%= link_to "Edit this course", edit_course_path(@course), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Destroy this course", course_path(@course), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div class="relative overflow-hidden w-full pt-[56.25%]">
+      <% if @course.lessons.any? && @course.lessons.first.video.present? %>
+        <!--<iframe width="853" height="480" src="https://www.youtube.com/embed/rEZNbM4MUdo" title="DHH - Ruby on Rails, 37signals, and the future of web development" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
+        <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/<%= @course.lessons.first.key %>" frameborder="0"></iframe>
+        <%#= video_tag @course.lessons.first.video, controls: true, class: "w-[720px] rounded mb-6" %>
+      <% end %>
     </div>
-    <%= link_to "Back to courses", courses_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <div class="border p-6 rounded">
+      <div class="flex flex-wrap justify-start items-center w-full mb-2">
+        <% @course.groups.each do |g| %>
+          <div class="bg-sky-200 text-slate-900 text-sm font-semibold mt-2 mr-2 px-2.5 py-0.5 rounded">
+            <%= g.name %>
+          </div>
+        <% end %>
+      </div>
+      <span><%= @course.lessons.count %> <%= "Lesson".pluralize(@course.lessons.count) %></span>
+      <h1 class="text-2xl font-bold"><%= @course.title %></h1>
+      <p class="text-gray-700 mt-2"><%= @course.description %></p>
+    </div>
   </div>
-</div>
+
+  <div class="flex flex-col justify-center items-center">
+    <%= render "sidebar" %>
+    <%= link_to "Back to courses", courses_path, class: "mt-2 rounded-lg py-3 px-5 inline-block font-medium bg-blue-300" %>
+  </div>
+
+</main>

@@ -1,0 +1,44 @@
+<div class="flex flex-col lg:px-6">
+    <div class="flex justify-center items-center mt-6 lg:mt-0 w-full">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden w-full">
+            <div class="bg-sky-500 p-4">
+                <h2 class="text-white text-2xl font-bold">Start Learning</h2>
+            </div>
+
+            <div class="p-4">
+                <% if user_signed_in? %>
+                    <p class="text-slate-600 text-base mb-4">
+                        Begin your journey into the amazing world of Web Development!
+                    </p>
+                    <div class="flex justify-center items-center text-center">
+                        <%= link_to "Start Course", course_lesson_path(@course, @course.first_lesson), class: "bg-emerald-300 hover:bg-emerald-400 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition ease-in-out duration-150" %>
+                    </div>
+                <% else %>
+                    <p class="text-slate-600 text-base mb-4">
+                        This course is free, but you do need to be logged in.
+                    </p>
+                    <%= link_to "Sign Up", new_user_registration_path, class: "bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition ease-in-out duration-150" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <% if @course.paid %>
+        <div class="flex justify-center items-center mt-6 w-full">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden w-full">
+                <div class="bg-sky-500 p-4">
+                    <h2 class="text-white text-2xl font-bold">Get more content</h2>
+                </div>
+                <div class="p-4">
+                    <% if user_signed_in? %>
+                        <p class="text-slate-700 text-base mb-4">If you are enjoying this, consider donating!</p>
+                        <button class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition ease-in-out duration-150">Sweet Tea</button>
+                    <% else %>
+                        <p class="text-slate-700 text-base mb-4">Sign up and dive deeper!</p>
+                        <%= link_to "Sign Up", new_user_registration_path, class: "bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition ease-in-out duration-150" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+            

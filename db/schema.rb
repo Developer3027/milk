@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_06_031948) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_10_215332) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,12 +79,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_031948) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "project_name"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "paid"
+    t.string "stripe_price_id"
+    t.text "premium_description"
+  end
+
+  create_table "courses_groups", id: :bigint, default: -> { "nextval('groups_courses_id_seq'::regclass)" }, force: :cascade do |t|
+    t.bigint "group_id"
+    t.bigint "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_groups_courses_on_course_id"
+    t.index ["group_id"], name: "index_groups_courses_on_group_id"
   end
 
   create_table "eruditions", force: :cascade do |t|
@@ -92,6 +105,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_031948) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "paid"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "key"
+    t.integer "position"
+    t.index ["course_id"], name: "index_lessons_on_course_id"
   end
 
   create_table "thatches", force: :cascade do |t|
@@ -114,6 +145,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_031948) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.text "bio"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -122,5 +157,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_031948) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "blog_posts", "categories"
   add_foreign_key "blog_posts", "users"
+  add_foreign_key "lessons", "courses"
   add_foreign_key "thatches", "users"
 end
