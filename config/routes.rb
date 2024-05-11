@@ -1,23 +1,31 @@
 Rails.application.routes.draw do
-  resources :thatches
-  resources :courses
-  resources :categories
+
   devise_for :admins, skip: [:registrations]
+
+  authenticated :admin_user do
+    root to: "admin#index", as: :admin_root
+  end
+
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
   }
 
+  resources :thatches
+  resources :categories
+
   resources :blog_posts do
     resource :cover_image, only: [:destroy], module: :blog_posts
+  end
+
+  resources :courses do
+    resources :lessons
   end
 
   # resources :eruditions #//? Courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  authenticated :admin_user do
-    root to: "admin#index", as: :admin_root
-  end
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
