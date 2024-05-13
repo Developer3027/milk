@@ -1,45 +1,62 @@
-<div class="w-full text-terminal-green mt-2">
+<main class="w-full text-terminal-green mt-2">
   <div class="flex justify-center items-center">
     <div class="flex flex-col items-start">
-      <h2 class="font-bold text-xl">Sign up</h2>
+      <h2 class="font-bold text-xl">Sign up for MILK</h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "border border-input-border bg-input-background rounded" %>
-        </div>
+          <div class="flex items-center border border-input-border bg-input-background rounded my-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+            </svg>
+            <%= f.email_field :email, autofocus: true, class: "bg-input-background rounded-r outline-none border-none border-transparent focus:border-transparent focus:!bg-input-background active:bg-input-background focus:ring-0 autofill:!bg-input-background hover:!bg-input-background", placeholder: "Email Address", autofocus: true %>
+          </div>
 
-        <div class="field my-2">
-          <%= f.label :name %><i>(nickname or first name)</i><br />
-          <%= f.text_field :name, class: "border border-input-border bg-input-background rounded" %>
-        </div>
+          <div class="flex items-center border border-input-border bg-input-background rounded my-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-1 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Zm6-10.125a1.875 1.875 0 1 1-3.75 0 1.875 1.875 0 0 1 3.75 0Zm1.294 6.336a6.721 6.721 0 0 1-3.17.789 6.721 6.721 0 0 1-3.168-.789 3.376 3.376 0 0 1 6.338 0Z" />
+            </svg>
+            <%= f.text_field :name, class: "bg-input-background rounded-r outline-none border-none border-transparent focus:border-transparent focus:!bg-input-background active:bg-input-background focus:ring-0 autofill:!bg-input-background hover:!bg-input-background", placeholder: "Nickname" %>
+          </div>
 
-        <div class="field my-2">
-          <%= f.label :bio %><i>(Short bio)</i><br />
-          <%= f.text_area :bio, class: "border border-input-border bg-input-background rounded", rows: "8", cols: "40" %>
-        </div>
+          <div class="flex-col items-center border border-input-border bg-input-background rounded my-2">
+            <div class="flex justify-evenly items-center border-b-2 border-gray-500 m-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+              </svg>
+              <span class="text-gray-400">User Bio</span>
+            </div>
+            <%= f.text_area :bio, class: "bg-input-background rounded-r outline-none border-none border-transparent focus:border-transparent focus:!bg-input-background active:bg-input-background focus:ring-0 autofill:!bg-input-background hover:!bg-input-background w-full", rows: "8" %>
+          </div>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "border border-input-border bg-input-background rounded" %>
-        </div>
+          <div class="flex-col items-center border border-input-border bg-input-background rounded mt-2">
+            <div>
+              <% if @minimum_password_length %>
+                <em class="p-1 m-1">(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %>
+            </div>
+            <div class="flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-1 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+              </svg>
+              <%= f.password_field :password, autocomplete: "current-password", class: "bg-input-background rounded outline-none border-none border-transparent focus:border-transparent focus:ring-0", placeholder: "Password", autocomplete: "new-password" %>
+            </div>
+          </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "border border-input-border bg-input-background rounded" %>
-        </div>
+          <div class="flex items-center border border-input-border bg-input-background rounded my-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 m-1 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+            </svg>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "bg-input-background rounded outline-none border-none border-transparent focus:border-transparent focus:ring-0", placeholder: "Confirm Password" %>
+          </div>
 
         <div class="actions my-3">
-          <%= f.submit "Sign up", class: "border rounded-sm border-input-border bg-input-background px-3 my-2" %>
+          <%= f.submit "Sign up", class: "border rounded-sm border-input-border bg-input-background px-3 my-2 w-full" %>
         </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
     </div>
   </div>
-</div>
+</main>
