@@ -2,7 +2,7 @@
   <div class="mx-auto w-full lg:px-4">
 
     <div class="relative overflow-hidden w-full pt-[56.25%]">
-      <% if @course.lessons.any? && @course.lessons.first.video.present? %>
+      <% if @course.lessons.any? && @course.lessons.first.key.present? %>
         <!--<iframe width="853" height="480" src="https://www.youtube.com/embed/rEZNbM4MUdo" title="DHH - Ruby on Rails, 37signals, and the future of web development" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>-->
         <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/<%= @course.lessons.first.key %>" frameborder="0"></iframe>
         <%#= video_tag @course.lessons.first.video, controls: true, class: "w-[720px] rounded mb-6" %>
