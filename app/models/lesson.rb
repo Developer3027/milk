@@ -3,5 +3,7 @@ class Lesson < ApplicationRecord
 
   belongs_to :course
 
+  has_many :lessson_users, dependent: :destroy
+
 
 end

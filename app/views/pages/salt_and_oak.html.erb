@@ -1,3 +1,188 @@
-<main class="min-h-min flex flex-1 flex-col justify-center items-center bg-slate-50 mt-2">
-    <h1">salt and oak</h1>
+<main class="bg-st-drk-primary flex flex-col items-center w-full">
+
+  <!-- Fake nav -->
+  <section id="home" class="mt-8 w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px]">
+    <header class="static max-w-5xl">
+      <div class="block rounded-t-lg bg-white">
+        <div class="block max-w-5xl">
+          <a href="#home" class="relative mt-1 ml-1">
+            <%= image_tag('https://milk-blog.s3.us-east-2.amazonaws.com/saltandtar/logo.svg', class: 'block ml-5') %>
+          </a>
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <!-- Hero -->
+  <section id="home" class="flex items-center justify-between bg-white w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px]">
+    <div class="flex flex-col items-center justify-center w-full">
+      <div class="flex flex-col sm:flex-row justify-evenly w-full">
+        <div class="flex flex-col items-center justify-center">
+          <h1 class="st__hero__title">Salt and Tar</h1>
+          <h3 class="text-center font-Inconsolata text-2xl">
+            Journey of a wooden boat
+          </h3>
+          <div class="flex justify-around my-16 w-full">
+            <a href="#about" class="text-st-drk-primary bg-white border-2 border-st-drk-primary rounded font-Inconsolata drop-shadow-lg px-8 py-2">
+              Learn More
+            </a>
+            <a href="#support" class="text-white bg-st-drk-primary border-2 border-st-drk-primary rounded font-Inconsolata drop-shadow-lg px-8 py-2">
+              Help Build
+            </a>
+          </div>
+        </div>
+        <div class="flex justify-center items-center">
+          <%= image_tag('https://milk-blog.s3.us-east-2.amazonaws.com/saltandtar/Group+8.png', class: 'st__hero__tag') %>
+        </div>
+      </div>
+      <div class="mt-4">
+        <%= image_tag('https://milk-blog.s3.us-east-2.amazonaws.com/saltandtar/Group+28.svg', alt: "border bottom") %>
+      </div>
+    </div>
+  </section>
+
+  <!-- promo section -->
+  <section id="promotion" class="flex items-center justify-between bg-st-lt-primary py-4 w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px]">
+    <div class="flex flex-col items-center justify-center w-full rounded-lg mx-2 bg-white">
+      <div class="flex justify-between items-center mt-4">
+        <div class="text-center font-fell text-6xl">
+          <h1>New</h1>
+        </div>
+        <div>
+          <%= image_tag('saltandtar/logo.svg', class: 'block ml-5') %>
+        </div>
+        <div class="text-center font-fell text-6xl">
+          <h1 class="">Wind</h1>
+        </div>
+      </div>
+      <div class="max-w-md px-2 mb-3">
+        <p class="text-center font-Inconsolata text-base">
+          This is a fan site built by me, Developer3027. Below you can
+          find different ways to help Salt and Tar build Rediviva.
+        </p>
+      </div>
+      <div class="flex mb-4 w-full">
+        <div class="md:flex flex-col justify-evenly w-full md:w-1/2 hidden">
+          <div class="md:flex justify-evenly hidden my-3 w-full">
+            <div class="flex flex-col items-end px-3 w-36  border border-st-secondary rounded-lg">
+              <h1 class="font-Inconsolata text-xl text-link-blue font-bold">YouTube</h1>
+              <p class="font-Inconsolata text-4xl font-bold">69K</p>
+              <small class="font-Inconsolata text-base font-semibold">
+                subscribers
+              </small>
+            </div>
+            <div class="flex flex-col items-end px-3 w-36  border border-st-secondary rounded-lg">
+              <h1 class="font-Inconsolata text-xl text-link-blue font-bold">Instagram</h1>
+              <p class="font-Inconsolata text-4xl font-bold">6K</p>
+              <small class="font-Inconsolata text-base font-semibold">
+                followers
+              </small>
+            </div>
+          </div>
+
+          <div class="md:flex justify-evenly hidden my-3 w-full">
+            <div class="flex flex-col items-end px-3 w-36  border border-st-secondary rounded-lg">
+              <h1 class="font-Inconsolata text-xl text-link-blue font-bold">Patreon</h1>
+              <p class="font-Inconsolata text-4xl font-bold">283</p>
+              <small class="font-Inconsolata text-base font-semibold">
+                members
+              </small>
+            </div>
+            <div class="flex flex-col items-end px-3 w-36  border border-st-secondary rounded-lg">
+              <h1 class="font-Inconsolata text-xl text-link-blue font-bold">Supporters</h1>
+              <p class="font-Inconsolata text-4xl font-bold">100%</p>
+              <small class="font-Inconsolata text-base font-semibold">
+                satisfied
+              </small>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-around w-full md:w-1/2 px-3">
+          <div class="flex flex-col w-full pl-2 border-l-4 border-st-secondary mx-1 my-2 bg-st-lt-secondary bg-opacity-30 rounded-r-lg">
+            <h1 class="font-Inconsolata text-2xl text-link-blue font-bold">Patreon</h1>
+            <p class="text-center font-Inconsolata text-base">
+              A membership platform used to provide rewards and perks to
+              subscribers.
+            </p>
+          </div>
+          <div class="flex flex-col w-full pl-2 border-l-4 border-st-secondary mx-1 my-2 bg-st-lt-secondary bg-opacity-30 rounded-r-lg">
+            <h1 class="font-Inconsolata text-2xl text-link-blue font-bold">YouTube</h1>
+            <p class="text-center font-Inconsolata text-base">
+              A video sharing platform used to share the journey of
+              building Rediviva.
+            </p>
+          </div>
+          <div class="flex flex-col w-full pl-2 border-l-4 border-st-secondary mx-1 my-2 bg-st-lt-secondary bg-opacity-30 rounded-r-lg">
+            <h1 class="font-Inconsolata text-2xl text-link-blue font-bold">Instagram</h1>
+            <p class="text-center font-Inconsolata text-base">
+              A image sharing platform used to share pictures of the
+              adventures in building Rediviva.
+            </p>
+          </div>
+          <div class="flex flex-col w-full pl-2 border-l-4 border-st-secondary mx-1 my-2 bg-st-lt-secondary bg-opacity-30 rounded-r-lg">
+            <h1 class="font-Inconsolata text-2xl text-link-blue font-bold">GoFundMe</h1>
+            <p class="text-center font-Inconsolata text-base">
+              A crowdfunding platform used to raise funding for building
+              Rediviva.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- video section -->
+  <section id="video" class="flex flex-col items-center justify-between bg-st-drk-primary w-96 sm:pb-16 sm:w-[640px] lg:w-[950px] xl:w-[1024px]">
+    <div class="h-4 bg-st-lt-primary rounded-b-md w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px]"></div>
+    <div class="flex flex-col items-center justify-between bg-st-drk-primary w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px]">
+      <div class="flex items-center justify-center w-full mt-4 mb-44 bg-[url('https://milk-blog.s3.us-east-2.amazonaws.com/saltandtar/Group_30.svg')]">
+        <div class="flex flex-col mt-4 md:w-1/2">
+          <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center w-[320px]">
+              <div class="flex w-full justify-end -mb-5 pr-3">
+                <span class="font-fell text-4xl text-white text-end">
+                  Salt and Tar
+                </span>
+              </div>
+              <div class="flex justify-start w-full">
+                <h1 class="font-fell text-9xl text-white">Video</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center md:hidden bg-white rounded-xl w-[350px] h-full">
+            <p class="px-3 py-7">
+              The videos here are the same ones found on the YouTube
+              channel and use the same url. They are just presented in a
+              different style here. Here you will find only Salt and Tar
+              content organized into easy to follow playlists. Subscribe
+              to get access to full content and 10% of your subscription
+              will be donated to Salt and Tar.
+            </p>
+            <button class="border-2 border-st-secondary rounded-lg mb-4 px-6 py-2">
+              Login
+            </button>
+          </div>
+          <div class="md:relative my-8 z-10 lg:ml-32">
+            <%= image_tag('https://milk-blog.s3.us-east-2.amazonaws.com/saltandtar/Video_Home.png', alt: "video review", class: 'border-4 border-st-secondary rounded-lg md:absolute top-0 left-8') %>
+          </div>
+        </div>
+
+        <div class="hidden md:flex justify-center md:w-1/2">
+          <div class="hidden md:flex flex-col items-center bg-white rounded-xl w-[350px] h-full">
+            <p class="px-3 py-7">
+              The videos here are the same ones found on the YouTube
+              channel and use the same url. They are just presented in a
+              different style here. Here you will find only Salt and Tar
+              content organized into easy to follow playlists. Subscribe
+              to get access to full content and 10% of your subscription
+              will be donated to Salt and Tar.
+            </p>
+            <button class="border-2 border-st-secondary rounded-lg mb-4 px-6 py-2">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>

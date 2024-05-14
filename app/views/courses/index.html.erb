@@ -1,5 +1,5 @@
 <main class="w-full bg-slate-50">
   <div id="courses" class="flex flex-wrap justify-center gap-14 min-w-full">
-    <%= render @courses %>
+    <%= render @courses, { user_started_courses: @user_started_courses, user_course_progresses: @user_course_progresses, user_unlocked_courses: @user_unlocked_courses } %>
   </div>
 </main>
