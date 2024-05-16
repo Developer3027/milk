@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
-
+  # create admin via console only or seed
   devise_for :admins, skip: [:registrations]
 
+  # authenticate admin home
   authenticated :admin_user do
     root to: "admin#index", as: :admin_root
   end
 
+  # admin routes
+  namespace :admin do
+    resources :courses do
+      resources :lessons
+    end
+    resources :users
+  end
+
+  # devise controllers accessible in controllers
   devise_for :users, controllers: {
     sessions: "users/sessions",
-    registrations: "users/registrations",
+    registrations: "users/registrations"
   }
 
   resources :thatches
@@ -18,6 +28,7 @@ Rails.application.routes.draw do
     resource :cover_image, only: [:destroy], module: :blog_posts
   end
 
+  # lessons resources in courses for users
   resources :courses do
     resources :lessons
   end
@@ -25,14 +36,12 @@ Rails.application.routes.draw do
   # resources :eruditions #//? Courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-
-
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  get "up", to: "rails/health#show", as: :rails_health_check
 
   # get the admin root
-  get "admin" => "admin#index"
+  get "admin", to: "admin#index", as: :admin
 
   # show form for new article
   # get "/blog_posts/new", to: "blog_posts#new", as: :new_blog_post
@@ -72,5 +81,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-
 end
