@@ -34,6 +34,23 @@ Things you may want to know:
 
 * ...
 
+This is a bit confusing. I used the User model when I started this project and is handled through Devise. It should be noted that in this project, a user has general access to the app and does not need to be logged in. A member has a greater level of access to the app and can do things like write articles and comment on things. In the code, a member is called a user and a user is not referred to because they have no auth cred's. Sorry for that confusion. Just remember, a user is a member. User = no auth / Member = auth / Admin = total access.
+
+### User
+Different parts of the app will need different information from the member. A member will have a profile page and different parts of the app may require different information from the member. In the profile a member can set an avatar, have a short bio, provide social links and update auth cred's or delete the account.
+
+### Admin
+The admin section of this site should be able to deal with adding content to any part of it. Every section of the site has different functionality and the admin should be able to manage any part of it. Admin can only be added via the console.
+
+Admin for blog:
+* Create, Edit, Update or Delete a blog, whether or not they are the owner. 
+* Manage and perform CRUD actions on comments for articles.
+* Manage and perform CRUD actions on tags and categories.
+* Show total number of articles
+* Show total number of likes
+* Top 5 articles
+* Recent comments
+
 ## Blog
 
 _Resources_
@@ -65,6 +82,7 @@ Blog needs:
 * Rating system for articles - thumbs up or stars
 * How long to read functionality
 * Comment if member.
+* Share article on socials
 
 ## Erudition
 
@@ -88,13 +106,15 @@ _character concept_ : [org site](https://www.mason-roberts.dev/hermits)
 
 _org design_ : [Figma](https://www.figma.com/file/1rA5nLglFEz6F1453wKwkG/Hermit-Plus?type=design&mode=design&t=1dy1b6GROUitv0zb-1)
 
-## Salt & Oak
+## Salt & Tar
 
 _Resources_
 
 _live landing_ : [org site](https://www.mason-roberts.dev/salt-and-tar)
 
 _org design_ : [Figma](https://www.figma.com/file/dCAzFHKupofhmKft0Anl5L/Salt-and-Tar?type=design&mode=design&t=1dy1b6GROUitv0zb-1)
+
+This site is part of a bigger concept called Swabbie. Swabbie will be a collection of sailing content providers, each with the functionality of this starter. Salt and Tar is my favorite and I have always thought they could use more functionality. This site will also serve the videos content from you tube but will include a music section that includes the music Ruth uses in her videos. It will also have a e-com side where one can purchase the merchandise and products they have used in there set up. I would also like to include a part to purchase overnight stays, day sails, or tours.
 
 ## Jukebox
 

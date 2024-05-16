@@ -1,60 +1,63 @@
 <!-- //? Sticky Top Navbar -->
 <div class="sticky top-0 z-10" data-controller="navbar" data-action="resize@window->navbar#closeOnLargerScreen keyup@window->navbar#closeWithEscape">
-    <nav class="flex justify-between items-center p-4 h-20 text-terminal-window bg-white">
-    <!-- //? Left section links home -->
-        <%= link_to root_path, class: "flex space-x-2" do %>
-            <div class="mx-2 lg:mx-0">Mason Roberts</div>
-            <%= image_tag('MILK-icon.svg', size: '28x28', class: 'mx-auto') %>
-            <div class="hidden lg:flex ">Developer3027 | DevTech group v0.3.0</div>
-        <% end %>
-        <!-- //? Right section Page Links -->
-        <div class="flex flex-grow justify-end ">
-            <ul class="flex space-x-2">
-                <li class="hidden md:flex"><%= link_to "Blog", blogs_path %></li>
-                <li class="hidden md:flex"><%= link_to "Erudition", erudition_path %></li>
-                <li class="hidden md:flex"><%= link_to "Hermit+", hermit_path%></li>
-                <li class="hidden md:flex"><%= link_to "Salt&Oak", salt_and_oak_path%></li>
-                <li class="hidden md:flex"><%= link_to "Thatch", tune_path%></li>
-                <li class="hidden md:flex">Car Wash</li>
-                <% if user_signed_in? %>
-                    <li>
-                        <button role="button" aria-label="menu" data-action="click->navbar#profileToggle">
-                            <%= image_tag('Profile-active.svg', size: "24x24", class: "mx-4") %>
-                        </button>
-                    </li>
-                <% else %>
-                    <li>
-                        <%= link_to user_session_path do %>
-                            <%= image_tag('Profile.svg', size: "24x24", class: "mx-4") %>
-                        <% end %>
-                    </li>
-                <% end %>
-            </ul>
-            <button class="md:hidden" role="button" aria-label="menu" data-action="click->navbar#toggle">&#9776</button>
-        </div>
-    </nav>
-    <!-- //? User menu -->
-    <nav class="hidden bg-input-border absolute right-2 p-2" data-navbar-target="profile">
-        <ul>
-            <li class="my-2 font-bold">
-                <% if current_user %>
-                    <%= current_user.name %>
-                <% end %> <hr>
-            </li>
-            <li class="my-2"><%= link_to "Profile", edit_user_registration_path %></li><!-- update user link -->
-            <li class="my-2">Support</li><!-- stripe donate -->
-            <%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border bg-input-background text-input-border px-3 my-2" %>
-        </ul>
-    </nav>
-    <!-- //? Dropdown menu - mobile -->
-    <nav class="hidden bg-input-border absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
-        <ul class="flex flex-col py-2 px-3">
-            <%= link_to blogs_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Blog</li><% end %>
-            <%= link_to erudition_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Erudition</li><% end %>
-            <%= link_to hermit_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Hermit+</li><% end %>
-            <%= link_to salt_and_oak_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Salt&Oak</li><% end %>
-            <%= link_to tune_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Thatch</li><% end %>
-            <li class="flex border border-terminal-window p-1 my-1 rounded-sm">Car Wash</li>
-        </ul>
-    </nav>
+	<nav class="flex justify-between items-center p-4 h-20 text-terminal-window bg-white">
+
+	<!-- //? Left section links home -->
+	<%= link_to root_path, class: "flex space-x-2" do %>
+		<div class="mx-2 lg:mx-0">Mason Roberts</div>
+		<%= image_tag("MILK-icon.svg", size: "28x28", class: "mx-auto") %>
+		<div class="hidden lg:flex ">Developer3027 | DevTech group v0.3.0</div>
+	<% end %>
+	<!-- //? Right section Page Links -->
+	<div class="flex flex-grow justify-end ">
+		<ul class="flex space-x-2">
+			<li class="hidden md:flex"><%= link_to "Blog", blogs_path %></li>
+			<li class="hidden md:flex"><%= link_to "Erudition", erudition_path %></li>
+			<li class="hidden md:flex"><%= link_to "Hermit+", hermit_path %></li>
+			<li class="hidden md:flex"><%= link_to "Salt&Oak", salt_and_oak_path %></li>
+			<li class="hidden md:flex"><%= link_to "Thatch", tune_path %></li>
+			<li class="hidden md:flex">Car Wash</li>
+			<% if user_signed_in? %>
+				<li>
+					<button role="button" aria-label="menu" data-action="click->navbar#profileToggle">
+						<%= image_tag("Profile-active.svg", size: "24x24", class: "mx-4") %>
+					</button>
+				</li>
+			<% else %>
+				<li>
+					<%= link_to user_session_path do %>
+						<%= image_tag("Profile.svg", size: "24x24", class: "mx-4") %>
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+		<button class="md:hidden" role="button" aria-label="menu" data-action="click->navbar#toggle">&#9776</button>
+	</div>
+	</nav>
+
+	<!-- //? User menu -->
+	<nav class="hidden bg-input-border absolute right-2 p-2" data-navbar-target="profile">
+		<ul>
+			<li class="my-2 font-bold">
+				<% if current_user %>
+					<%= current_user.name %>
+				<% end %> <hr>
+			</li>
+			<li class="my-2"><%= link_to "Profile", edit_user_registration_path %></li><!-- update user link -->
+			<li class="my-2">Support</li><!-- stripe donate -->
+			<%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border bg-input-background text-input-border px-3 my-2" %>
+		</ul>
+	</nav>
+
+	<!-- //? Dropdown menu - mobile -->
+	<nav class="hidden bg-input-border absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
+		<ul class="flex flex-col py-2 px-3">
+			<%= link_to blogs_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Blog</li><% end %>
+			<%= link_to erudition_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Erudition</li><% end %>
+			<%= link_to hermit_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Hermit+</li><% end %>
+			<%= link_to salt_and_oak_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Salt&Oak</li><% end %>
+			<%= link_to tune_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Thatch</li><% end %>
+			<li class="flex border border-terminal-window p-1 my-1 rounded-sm">Car Wash</li>
+		</ul>
+	</nav>
 </div>

@@ -1,6 +1,7 @@
 class BlogPost < ApplicationRecord
   has_one_attached :cover_image
   belongs_to :user
+  # belongs_to :admin
   belongs_to :category
   has_rich_text :content
 
@@ -10,8 +11,8 @@ class BlogPost < ApplicationRecord
 
   scope :sorted, -> { order(arel_table[:published_at].desc.nulls_last).order(updated_at: :desc) }
   scope :draft, -> { where(published_at: nil) }
-  scope :published, -> { where("published_at <= ?", Time.current) }
-  scope :scheduled, -> { where("published_at > ?", Time.current) }
+  scope :published, -> { where('published_at <= ?', Time.current) }
+  scope :scheduled, -> { where('published_at > ?', Time.current) }
 
   def draft?
     published_at.nil?

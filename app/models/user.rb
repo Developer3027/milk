@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :blog_posts
 
   has_many :thatches
+  has_many :lesson_users
 end

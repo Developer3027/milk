@@ -18,3 +18,220 @@
 
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
 @import 'actiontext.css';
+
+.st__body {
+    @apply bg-st-drk-primary flex flex-col items-center w-full;
+  }
+  
+  .st__header__section {
+    @apply mt-8 w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px];
+  }
+  
+  .st__header {
+    @apply static max-w-5xl;
+  }
+  
+  .st__navbar {
+    @apply block rounded-t-lg bg-white;
+  }
+  
+  .st__nav__container {
+    @apply block max-w-5xl
+  }
+  
+  .st__brand {
+    @apply relative mt-1 ml-1;
+  }
+  
+  .st__nav__logo {
+    @apply block ml-5;
+  }
+
+  .st__container {
+    @apply flex items-center justify-between bg-white w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px];
+  }
+  
+  /* .st__container__promo {
+    @apply flex items-center justify-between bg-st-lt-primary py-4 w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px];
+  } */
+  
+  /* .st__video__begin {
+    @apply h-4 bg-st-lt-primary rounded-b-md w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px];
+  } */
+  
+  /* .st__container__video {
+    @apply flex flex-col items-center justify-between bg-st-drk-primary w-96 sm:w-[640px] lg:w-[950px] xl:w-[1024px];
+  } */
+  
+  /*] Navigation */
+  .st__navbar {
+    @apply flex ;
+  }
+  
+  .st__logo {
+    @apply bg-st-logo w-[100px] h-[100px];
+  }
+  
+  .mobile {
+    @apply flex justify-center items-center w-16 h-16 rounded-lg cursor-pointer z-10 mr-4;
+  }
+  
+  /*.mobile div {
+    @apply w-[30px] h-[30px];
+     position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }*/
+  
+  .st__sr__only {
+    @apply invisible;
+  }
+
+  .st__menu__show {
+    @apply opacity-100 transition-all;
+  }
+  
+  .st__menu__hide {
+    @apply animate-pulse;
+  }
+
+  /*] Hero section */
+/* .st__wrap {
+    @apply flex flex-col items-center justify-center w-full; */
+    /* position: relative; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: white; */
+    /* height: 675px; */
+  /* } */
+  
+  /* .st__wrap__promo {
+    @apply flex flex-col items-center justify-center w-full rounded-lg mx-2 bg-white;
+  } */
+  
+  .st__wrap__video {
+    @apply flex items-center justify-center w-full mt-4 mb-44 bg-[url('/images/st/Group_30.svg')]
+  }
+  
+  /* .st__promo__title {
+    @apply text-center font-fell text-6xl
+  } */
+  
+  /* .st__promo__p {
+    @apply text-center font-Inconsolata text-base
+  } */
+  
+  /* .st__promo__infocard {
+    @apply flex flex-col items-end px-3 w-36  border border-st-secondary rounded-lg
+  } */
+  
+  /* .st__promo__infotitle {
+    @apply font-Inconsolata text-2xl text-link-blue font-bold
+  } */
+  
+  /* .st__promo__infosub {
+    @apply font-Inconsolata text-4xl font-bold
+  } */
+  
+  /*.st__promo__infosmall {
+    @apply font-Inconsolata text-base font-semibold
+  } */
+  
+  /*.st__hero {
+    @apply flex flex-col sm:flex-row justify-evenly w-full;
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    margin-top: 12rem; 
+    --gap: 5em; 
+    justify-content: space-evenly; 
+  } */
+  
+  .st__title__info {
+    @apply flex flex-col items-center justify-center;
+  }
+  
+  /* used due to rop shadow on text */
+  .st__hero__title {
+    text-align: center;
+    font-family: 'IM Fell English SC', serif;
+    margin-top: 2.5rem;
+    font-size: 4rem;
+    filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
+  }
+  
+  /* .st__sub__title {
+    @apply text-center font-Inconsolata text-2xl;
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
+  } */
+  
+  .st__hero__actions {
+    @apply flex justify-around my-16 w-full;
+    /* display: flex;
+    margin-top: 4rem;
+    width: 100%;
+    justify-content: space-around; */
+  }
+  
+  /* .st__learn__more__btn {
+    @apply text-st-drk-primary bg-white border-2 border-st-drk-primary rounded font-Inconsolata drop-shadow-lg px-8 py-2;
+  } */
+  
+  /* .st__help__build__btn {
+    @apply text-white bg-st-drk-primary border-2 border-st-drk-primary rounded font-Inconsolata drop-shadow-lg px-8 py-2;
+  } */
+  
+  /* .st__hero__img__wrap {
+    @apply flex justify-center items-center;
+  } */
+  
+  .st__hero__tag {
+    width: 15rem;
+    filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
+  }
+  
+  /* .st__arrow__wrap {
+    margin-top: 1rem;
+    position: relative;
+  } */
+  
+  .st__arrow {
+    position: absolute;
+    left: 0;
+    margin-top: -1.5rem;
+    filter: drop-shadow(3px 3px 2px rgb(177, 177, 177));
+  }
+  
+  .st__wave1__wrap {
+    @apply flex justify-center border-2 border-red-600;
+  }
+  
+  .st__wave1 {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    left: 0;
+    bottom: 3%;
+  }
+  
+  .st__wave2 {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+  }
+  
+  #lght-blue-wave{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
