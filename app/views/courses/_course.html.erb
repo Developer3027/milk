@@ -1,7 +1,7 @@
 <div id="<%= dom_id course %>" class="max-w-sm rounded-b overflow-hidden shadow-lg hover:bg-slate-100">
   <%= link_to course, class: "flex flex-col h-full" do %>
-    <% if course.image.present? %>
-      <%= image_tag course.image, class: "w-full rounded-t" %>
+    <% if course.course_image.present? %>
+      <%= image_tag course.course_image, class: "w-full rounded-t object-cover" %>
     <% else %>
       <%= image_tag("https://via.placeholder.com/300") %>
     <% end %>

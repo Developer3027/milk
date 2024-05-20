@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     root to: "admin#index", as: :admin_root
   end
 
+  # get the admin root
+  get "admin", to: "admin#index", as: :admin
+
   # admin routes
   namespace :admin do
     resources :courses do
@@ -33,15 +36,16 @@ Rails.application.routes.draw do
     resources :lessons
   end
 
+  resources :courses do
+    resources :course_image, only: [:destroy], module: :courses
+  end
+
   # resources :eruditions #//? Courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up", to: "rails/health#show", as: :rails_health_check
-
-  # get the admin root
-  get "admin", to: "admin#index", as: :admin
 
   # show form for new article
   # get "/blog_posts/new", to: "blog_posts#new", as: :new_blog_post

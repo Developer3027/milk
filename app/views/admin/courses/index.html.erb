@@ -6,9 +6,10 @@
 <div class="">
 <h1>Courses</h1>
 
-<div id="admin_courses" class="flex items-center bg-slate-100 border border-slate-400 rounded p-1">
-  <%= image_tag("https://via.placeholder.com/320x180", class: "w-18 h-14 rounded") %>
-  <span><%= @admin_courses.first.title %></span>
+<div id="admin_courses" class="flex-col items-center bg-slate-100 border border-slate-400 rounded p-1">
+  <% @admin_courses.order(id: :asc).each do |admin_course| %>
+    <%= render admin_course%>
+  <% end %>
 </div>
 
 

@@ -1,2 +1,18 @@
 <div id="<%= dom_id course %>">
+  <div class="flex p-1">
+    <div class="flex justify-center items-center px-3 border border-red-500">
+      <%= course.id %>
+    </div>
+    <% if course.image.present? %>
+      <%= image_tag course.image.variant(:thumb) %>
+    <% else %>
+      <%= image_tag("https://via.placeholder.com/320x180") %>
+    <% end %>
+    <div class="flex justify-center items-center px-3" >
+      <%= course.title %>
+    </div>
+    <div class="flex justify-center items-center px-3" >
+      <%= course.lessons.count %>
+    </div>
+  </div>
 </div>
