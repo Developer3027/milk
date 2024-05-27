@@ -1,0 +1,24 @@
+<div id="<%= dom_id lesson %>" class="max-w-sm min-w-64 rounded overflow-hidden shadow-lg shadow-stone-400/60 bg-stone-50 hover:bg-sky-100 my-4">
+  <%= link_to [:admin, @admin_course, lesson] do %>
+    <div class="flex justify-center py-2">
+      <% if lesson.lesson_image.present? %>
+        <%= image_tag lesson.lesson_image, class: "rounded" %>
+      <% else %>
+        <%= image_tag("https://via.placeholder.com/320x180") %>
+      <% end %>
+    </div>
+    <div>
+      <div class="flex flex-col p-2">
+        <% if lesson.paid %>
+          <%= icon("fa-solid", "lock", class: "mr-2 text-grey-600") %>
+        <% end %>
+        <div class="py-2">
+          <h1 class="text-slate-700 font-bold"><%= lesson.title %></h1>
+        </div>
+        <div>
+          <%= lesson.description.to_plain_text.truncate_words(30) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

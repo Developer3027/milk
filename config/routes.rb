@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get the admin root
   get "admin", to: "admin#index", as: :admin
 
-  # admin routes
+  # admin routes for courses
   namespace :admin do
     resources :courses do
       resources :lessons
@@ -36,9 +36,9 @@ Rails.application.routes.draw do
     resources :lessons
   end
 
-  resources :courses do
-    resources :course_image, only: [:destroy], module: :courses
-  end
+  # resources :courses do
+  #   resources :course_image, only: [:destroy], module: :courses
+  # end
 
   # resources :eruditions #//? Courses
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

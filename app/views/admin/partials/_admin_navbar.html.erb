@@ -1,10 +1,10 @@
 <% linx = [
-  [ "Dashboard", admin_root_path ],
+  [ "Dashboard", admin_path ],
   [ "Create Blog", new_blog_post_path ],
   [ "Create Category(blog)", new_category_path ],
   [ "Create Course", new_course_path ],
-  [ "Manage Users", admin_courses_path ],
-  [ "Manage Courses", admin_root_path ]
+  [ "Manage Users", admin_users_path ],
+  [ "Manage Courses", admin_courses_path ]
 ] %>
 
 <!-- //? Sticky Top Navbar -->
@@ -12,13 +12,13 @@
 	<nav class="flex justify-between items-center p-4 h-20 text-terminal-window bg-white">
 
 	<!-- //? Left section links home -->
-	<%= link_to admin_root_path, class: "flex space-x-2" do %>
+	<%= link_to admin_path, class: "flex space-x-2" do %>
 		<%= image_tag("MILK-icon.svg", size: "28x28", class: "mx-auto") %>
 		<div class="hidden sm:block my-auto mx-2 lg:mx-0">MILK ADMIN</div>
 	<% end %>
 	<!-- //? Right section Page Links -->
     <div class="flex flex-grow justify-end">
-      <%= select_tag nil, options_for_select(linx), class: "block border-slate-300 rounded-sm selected:text-black", onchange: "Turbo.visit(selectedOptions[0].value)" %>
+      <%= select_tag nil, options_for_select(linx, request.path), class: "block border-slate-300 rounded-sm selected:text-black", onchange: "Turbo.visit(this.selectedOptions[0].value)" %>
     </div>
 	</nav>
 </div>

@@ -36,21 +36,21 @@
 	</nav>
 
 	<!-- //? User menu -->
-	<nav class="hidden bg-input-border absolute right-2 p-2" data-navbar-target="profile">
+	<nav class="hidden bg-white absolute right-1 p-3" data-navbar-target="profile">
 		<ul>
-			<li class="my-2 font-bold">
+			<li class="my-4 font-bold">
 				<% if current_user %>
 					<%= current_user.name %>
 				<% end %> <hr>
 			</li>
-			<li class="my-2"><%= link_to "Profile", edit_user_registration_path %></li><!-- update user link -->
-			<li class="my-2">Support</li><!-- stripe donate -->
-			<%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border bg-input-background text-input-border px-3 my-2" %>
+			<li class="my-4"><%= link_to "Profile", edit_user_registration_path %></li><!-- update user link -->
+			<li class="my-4">Support</li><!-- stripe donate -->
+			<%= button_to "log Out", destroy_user_session_path, method: :delete, class: "border rounded-sm border-input-border bg-input-background text-input-border px-4 my-2" %>
 		</ul>
 	</nav>
 
 	<!-- //? Dropdown menu - mobile -->
-	<nav class="hidden bg-input-border absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
+	<nav class="hidden bg-white absolute w-2/3 right-2 h-80 overflow-y-auto rounded-b-sm" data-navbar-target="content">
 		<ul class="flex flex-col py-2 px-3">
 			<%= link_to blogs_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Blog</li><% end %>
 			<%= link_to erudition_path do %><li class="flex border border-terminal-window p-2 my-1 rounded-sm">Erudition</li><% end %>

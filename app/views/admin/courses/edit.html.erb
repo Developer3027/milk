@@ -1,10 +1,12 @@
-<h1>Editing course</h1>
+<main class="bg-white w-full">
+  <div class="flex flex-col m-4">
+    <h1>Editing course</h1>
 
-<%= render "form", admin_course: @admin_course %>
+    <%= render "form", admin_course: @admin_course %>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this course", @admin_course %> |
-  <%= link_to "Back to courses", admin_courses_path %>
-</div>
+  <div class="flex justify-center items-center py-4">
+    <%= link_to "Show this course", [:admin, @admin_course], class: "py-1 px-3 mx-1 w-40 border border-slate-600 rounded bg-sky-200" %> |
+    <%= link_to "Back to courses", admin_courses_path, class: "py-1 px-3 mx-1 w-40 border border-slate-600 rounded bg-sky-200" %>
+  </div>
+</main>

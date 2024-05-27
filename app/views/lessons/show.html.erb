@@ -1,18 +1,29 @@
 <main class="flex flex-col lg:flex-row mx-auto pb-6 bg-slate-50 mt-2">
-  <div class="mx-auto w-full lg:px-4">
-
-    <div class="relative overflow-hidden w-full pt-[56.25%] min-w-[426px]">
-        <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/<%= @lesson.key %>" frameborder="0"></iframe>
+  <div class="flex flex-col justify-center items-center w-full lg:px-4">
+    <div class="lg:w-3/4 lg:h-3/4">
+      <div class="relative overflow-hidden w-full pt-[56.25%] min-w-[426px]">
+          <iframe class="absolute top-0 left-0 bottom-0 right-0 w-full h-full" src="https://www.youtube.com/embed/<%= @lesson.key %>?rel=0&controls=0" frameborder="0"></iframe>
+      </div>
     </div>
-    <div class="my-2 p-4 border rounded">
-      <h1 class="text-2xl font-semibold"><%= @lesson.title %></h1>
+    <div class="my-2 p-4 bg-yellow-200">
+      <p>This video is from a YouTube provider. Once the video is complete you will see various video suggestions from the provider that are not part of this course. Clicking on one will take you to YouTube. I encourage you to visit <em><strong>this</strong></em> providers content and learn more from them. This course has it's own navigation and will guide you through the course work. Don't forget to click the green button to mark this as complete.</p>
+    </div>
+    <div class="border rounded">
+      <div class="flex justify-between items-center px-2 py-4 border-b">
+        <span class="text-2xl font-semibold"><%= @lesson.title %></span>
+        <% if @completed_lessons&.include?(@lesson.id) %>
+          <div class="flex justify-center items-center">
+            <span class="px-4 py-2 rounded bg-violet-200">You have completed this lesson!</span>
+          </div>
+        <% else %>
+          <%= link_to "Mark as complete", course_lesson_path(@course, @lesson), data: { "turbo-method" => :put }, class: "rounded text-white bg-green-600 hover:bg-teal-600 px-4 py-2" %>
+        <% end %>
+        <span class=""><em><%= @lesson.provider%></em></span>
+      </div>
       <p class="text-gray-700"><%= @lesson.description %></p>
     </div>
-    <div class="mt-6 lg:mb-0">
-      <%= link_to "Mark as complete", course_lesson_path(@course, @lesson), data: { "turbo-method" => :put }, class: "rounded text-white bg-teal-500 hover:bg-teal-600 px-4 py-2" %>
-    </div>
   </div>
-  <div class="sidebar_contianer lg:min-w-60 lg:mx-4 lg:overflow-y-scroll">
+  <div class="sidebar_contianer lg:min-w-80 lg:mx-4 lg:overflow-y-scroll">
     <%= render "sidebar", course: @course, completed_lessons: @completed_lessons %>
   </div>
 </main>

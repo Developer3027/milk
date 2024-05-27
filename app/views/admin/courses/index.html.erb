@@ -7,6 +7,20 @@
 <h1>Courses</h1>
 
 <div id="admin_courses" class="flex-col items-center bg-slate-100 border border-slate-400 rounded p-1">
+  <div class="flex p-1">
+    <div class="flex justify-center items-center px-3 border border-slate-500">
+      ID
+    </div>
+    <div class="flex justify-center items-center px-3 w-28 border border-slate-500">
+      <span>Image</span>
+    </div>
+    <div class="flex justify-center items-center px-3 w-40 border border-slate-500" >
+      Title
+    </div>
+    <div class="flex justify-center items-center px-3 border border-slate-500" >
+      Lessons
+    </div>
+  </div>
   <% @admin_courses.order(id: :asc).each do |admin_course| %>
     <%= render admin_course%>
   <% end %>

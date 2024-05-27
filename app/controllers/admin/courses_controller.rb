@@ -49,7 +49,8 @@ class Admin
 
     # Permits the specified parameters for the course object.
     def course_params
-      params.require(:course).permit(:title, :description, :premium_description, :paid, :stripe_price_id, :image)
+      params.require(:course).permit(:course_image, :title, :subtitle, :description, :premium_description, :paid,
+                                     :stripe_price_id)
     end
   end
 end

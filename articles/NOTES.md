@@ -18,19 +18,27 @@
   * SEO (Search Engine Optimization)
   * CMS (Content Management System)
 
-# Course
+## Course
 Course needs: 
-* An image
-* A video
-* A instructor
-* A title
+* image
+* title
+* subtitle
 * A description
-* A rating
 * A length
 * Number of lessons
 * Number of lectures
 * Number of hours
 * Any requirements or pre
+* A rating
 * recommendations
 
 Any course is going to have several lessons.
+
+## Lessons
+Lesson needs:
+* a image
+* a key (video)
+* a provider (author)
+* title
+* description
+* rating
