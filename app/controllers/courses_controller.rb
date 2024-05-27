@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: %i[ show edit update destroy ]
+  before_action :set_course, only: %i[show edit update destroy]
 
   # GET /courses or /courses.json
   def index
@@ -7,12 +7,12 @@ class CoursesController < ApplicationController
 
     @user_started_courses = current_user&.lesson_users&.joins(:lesson)&.pluck(:course_id)&.uniq
 
-    if @user_started_courses.present?
-      @user_course_progresses = @user_started_courses.map do |course_id|
-        course_lessons = Course.find(course_id).lessons.count
-        completed_lessons = current_user&.lesson_users&.joins(:lesson)&.where(completed: true, lesson: { course: course_id })&.count
-        { course_id: course_id, completed_percentage: (completed_lessons.to_f / course_lessons.to_f * 100).to_i }
-      end
+    return unless @user_started_courses.present?
+
+    @user_course_progresses = @user_started_courses.map do |course_id|
+      course_lessons = Course.find(course_id).lessons.count
+      completed_lessons = current_user&.lesson_users&.joins(:lesson)&.where(completed: true, lesson: { course: course_id })&.count
+      { course_id:, completed_percentage: (completed_lessons.to_f / course_lessons.to_f * 100).to_i }
     end
   end
 
@@ -69,13 +69,14 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_course
-      @course = Course.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def course_params
-      params.require(:course).permit(:title, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    @course = Course.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def course_params
+    params.require(:course).permit(:course_image, :title, :subtitle, :description)
+  end
 end

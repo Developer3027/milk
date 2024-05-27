@@ -1,0 +1,36 @@
+<main class="flex flex-col w-full bg-stone-700">
+  <div class="mb-10 px-4">
+    <h1 class="my-4 font-bold text-xl text-white"><%= @admin_course.title %> Lessons</h1>
+  </div>
+
+  <div class="flex justify-center items-start">
+    <div class="w-2/5 p-4 mx-4 bg-slate-100 rounded">
+      <h1 class="text-xl font-bold">Lessons Format</h1>
+      <p class="py-2">
+        There can be many lessons within a course. This project uses YouTube for video content. Each lesson will need both a cover image and a video key. The image dimensions should be 300x300. The video key is the unique identifier in the youtube url. If a image is not present then a placeholder image is used automatic.
+      </p>
+      <p class="py-2">
+        For development the image is saved local to the system via active record. For production the image is saved to an AWS S3 bucket.
+      </p>
+      <p class="py-2">
+        A lesson has a boolean for paid content. If true then it will be locked until payment is collected. You will also need a title, description, and position.
+      </p>
+    </div>
+  
+    <div id="admin_lessons" class="w-3/5 flex flex-col">
+      <div class="flex px-4">
+        <%= link_to "New Lesson", new_admin_course_lesson_path(@admin_course), class: "bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded px-4 py-2" %>
+      </div>
+      <div class="flex flex-wrap">
+        <% @admin_lessons.each do |admin_lesson| %>
+          <div class="max-w-xs mx-4" id="<% admin_lesson.id %>">
+            <%= link_to [:admin, @admin_course, admin_lesson] do %>
+              <%= render admin_lesson %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</main>

@@ -1,0 +1,29 @@
+<main class="flex flex-col w-full bg-white">
+  <div class="mb-10 px-4">
+    <h1 class="my-4 font-bold text-xl">New Lesson</h1>
+  </div>
+  <div class="flex justify-center items-start">
+    <div class="w-2/5 p-4 bg-slate-100 rounded">
+      <h1 class="text-xl font-bold">Lessons Format</h1>
+      <p class="py-2">
+        This project uses YouTube for video content. Each lesson will need both a cover image and a video key. The image dimensions should be 300x300. The video key is the unique identifier in the youtube url. If a image is not present then a placeholder image is used automatic.
+      </p>
+      <p class="py-2">
+        For development the image is saved local to the system via active record. For production the image is saved to an AWS S3 bucket.
+      </p>
+      <p class="py-2">
+        A lesson has a boolean for paid content. If true then it will be locked until payment is collected. The provider / author is the YouTube content creator, not you. The description is rich text so you may provide links, format text, or insert images. Suggested videos will be from the content providers channel.
+      </p>
+    </div>
+  
+    <div id="admin_lessons" class="w-3/5 flex flex-col">
+      <div class="flex flex-wrap px-2">
+        <%= render "form", admin_lesson: @admin_lesson %>
+      </div>
+    </div>
+  </div>
+<br>
+<div>
+  <%= link_to "Back to lessons", admin_course_lessons_path, class: "border rounded bg-blue-400 py-2 px-4 ms-4 hover:bg-blue-700 hover:text-white cursor-pointer" %>
+</div>
+</main>

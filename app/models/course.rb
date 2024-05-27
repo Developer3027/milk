@@ -1,37 +1,29 @@
 class Course < ApplicationRecord
   has_rich_text :description
-  has_one_attached :image do |attachable|
-    attachable.variant :thumb, resize_to_limit: [100, 100]
-  end
+  has_one_attached :course_image
   has_many :lessons
   has_and_belongs_to_many :groups
 
-    # Returns the first lesson in the course.
-    #
-    # @return [Lesson] the first lesson in the course
+  # Returns the first lesson in the course.
+  #
+  # @return [Lesson] the first lesson in the course
   def first_lesson
-    self.lessons.order(:position).first
+    lessons.order(:position).first
   end
 
   def next_lesson(current_user)
-    if current_user.blank?
-      return self.lessons.order(:position).first
-    end
+    return lessons.order(:position).first if current_user.blank?
 
-    completed_lessons = current_user.lesson_users.includes(:lesson).where(completed: true).where(lessons: { course_id: self.id })
+    completed_lessons = current_user.lesson_users.includes(:lesson).where(completed: true).where(lessons: { course_id: id })
 
-    started_lessons = current_user.lesson_users.includes(:lesson).where(completed: false).where(lessons: { course_id: self.id }).order(:position)
+    started_lessons = current_user.lesson_users.includes(:lesson).where(completed: false).where(lessons: { course_id: id }).order(:position)
 
-    if started_lessons.any?
-      return started_lessons.first.lesson
-    end
+    return started_lessons.first.lesson if started_lessons.any?
 
     lessons = self.lessons.where.not(id: completed_lessons.pluck(:lesson_id)).order(:position)
-    if lessons.any?
-      lessons.first
-    else
-      return self.lessons.order(:position).first
-    end
+    return self.lessons.order(:position).first unless lessons.any?
+
+    lessons.first
   end
 
   def vid_key

@@ -11,12 +11,28 @@
     </div>
   <% end %>
 
-  <div class="flex flex-col bg-white">
-    <label class="text-sm" for="name">Title</label>
-    <%= form.text_field :title, class: "border-gray-200 rounded", id: "title", placeholder: "Course Title" %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="flex flex-col w-full">
+    <h1>Edit Course: <%= admin_course.title %> ( id: <%= admin_course.id %> )</h1>
+    <div class="flex flex-col mt-4">
+      <%= admin_course.course_image.present? ? (image_tag admin_course.course_image, class: "w-64 rounded mb-2") : nil %>
+      <label class="text-sm" for="course_image">Cover Image</label>
+      <%= form.file_field :course_image, id: "course_image" %>
+    </div>
+  
+    <div class="flex flex-col">
+      <label class="text-sm" for="title">Title</label>
+      <%= form.text_field :title, class: "border-gray-200 rounded", id: "title", placeholder: "Course Title" %>
+    </div>
+    <div class="flex flex-col">
+      <label class="text-sm" for="subtitle">Subtitle</label>
+      <%= form.text_area :subtitle, class: "flex flex-wrap border-gray-200 rounded w-auto h-auto", id: "subtitle", placeholder: "Subtitle" %>
+    </div>
+    <div class="flex flex-col">
+      <label class="text-sm" for="description">Description</label>
+      <%= form.rich_text_area :description, class: "flex flex-wrap border-gray-200 rounded w-auto h-auto", id: "description", placeholder: "Description" %>
+    </div>
+    <div class="py-1 px-3 my-4 w-40 border border-slate-600 rounded bg-green-200">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

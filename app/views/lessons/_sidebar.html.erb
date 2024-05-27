@@ -11,9 +11,19 @@
             </div>
         <% else %>
             <%= link_to course_lesson_path(course, lesson) do %>
-                <div class="border p-6 hover:bg-sky-100 <%= @lesson.id == lesson.id ? 'bg-yellow-100' : '' %>">
-                    <%= completed_lessons&.include?(lesson.id) ? icon('fa-solid', 'check-circle', class: "mr-2 text-green-500") : nil %>
-                    <span class="font-light"><%= lesson.title %></span>
+                <div class="flex border p-6 hover:bg-sky-100 <%= @lesson.id == lesson.id ? 'bg-yellow-100' : '' %>">
+                    <%= image_tag lesson.lesson_image, class: "w-20" %>
+                    <div class="flex-col justify-between items-center h-20">
+                        <div class="flex justify-end">
+                            <%= completed_lessons&.include?(lesson.id) ? icon('fa-solid', 'check-circle', class: "mr-2 text-green-500") : nil %>
+                        </div>
+                        <div class="flex justify-start px-1 py-2">
+                            <span class="font-light"><%= lesson.title %></span>
+                        </div>
+                        <div class="flex justify-start px-1">
+                            <span class="font-light"><em><%= lesson.provider %></em></span>
+                        </div>
+                    </div>
                 </div>
             <% end %>
         <% end %>
