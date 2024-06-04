@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # create admin via console only or seed
+  # Admin is not registerable
+  # Admin created only per console or seed
   devise_for :admins, skip: [:registrations]
+
+  # devise controllers accessible in controllers
+  devise_for :users, controllers: {
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
 
   # authenticate admin home
   authenticated :admin_user do
@@ -17,12 +24,6 @@ Rails.application.routes.draw do
     end
     resources :users
   end
-
-  # devise controllers accessible in controllers
-  devise_for :users, controllers: {
-    sessions: "users/sessions",
-    registrations: "users/registrations"
-  }
 
   resources :thatches
   resources :categories

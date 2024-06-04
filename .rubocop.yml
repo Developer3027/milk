@@ -1,4 +1,11 @@
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 80
